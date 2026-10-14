@@ -5,11 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# 该账号「更新/停用 Pages 站点」API 不可用（PATCH 404、DELETE 422），
-# Pages 源被锁在 main /。故构建后把 dist 内容直接落到 main 根，Pages 即 serve。
-# 防死循环：deploy: 开头的提交是工作流自己推的，遇到就整条跳过。
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: pages
@@ -24,81 +23,68 @@ jobs:
       - name: 检出站点仓
         uses: actions/checkout@v5
 
-      - name: 读出当前提交主题
-        id: head
-        run: echo "msg=$(git log -1 --pretty=%s)" >> "$GITHUB_OUTPUT"
-
       - name: 检出内容仓
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         uses: actions/checkout@v5
         with:
           repository: diuci/chinese-character-riddle
           path: content
 
       - name: 设置 Node
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
       - name: 安装依赖
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: npm ci
 
       - name: 生成脚本自检
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: python tools/build-site.py --selftest
 
       - name: 从内容仓生成站点页面
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: python tools/build-site.py
 
       - name: 法律护栏自检
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-legal.mjs --selftest
 
       - name: 法律护栏
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-legal.mjs
 
       - name: 产物体检自检
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: python tools/check-pages.py --selftest
 
       - name: 产物体检
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: python tools/check-pages.py
 
       - name: 字号结构闸门自检
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-typography.mjs --selftest
 
       - name: 字号结构闸门
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-typography.mjs
 
       - name: UI 闸门自检
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-ui.mjs --selftest
 
       - name: UI 闸门
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-ui.mjs
 
       - name: 构建站点
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: npm run build
         env:
           SITE_BASE: '/'
 
-      - name: 把 dist 落到 main 根并推送
-        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # dist 内容与源码并存于根：源码在 tools/、site/，产物在 index.html、assets/、riddles/…
-          cp -r site/.vitepress/dist/. .
-          git add -A
-          git commit -m "deploy: 猜字谜分站 $(date -u +%Y%m%dT%H%M%SZ)"
-          git push origin main
+      - name: 上传 Pages 产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/.vitepress/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
