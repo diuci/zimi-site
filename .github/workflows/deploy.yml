@@ -1,14 +1,14 @@
-name: 部署字谜分站
+name: 部署猜字谜分站
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+# 分支部署：构建后把 dist 推到 gh-pages 分支，Pages 源指向该分支。
+# （该账号「更新 Pages 站点」API 不可用，切不了 GitHub Actions 部署模式，故走分支。）
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -17,8 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # job 级环境变量：CONTENT_ROOT 必须覆盖到 npm 子进程，
-    # 否则 prebuild 钩子会因找不到内容仓而失败。
     env:
       CONTENT_ROOT: ${{ github.workspace }}/content
     steps:
@@ -41,7 +39,6 @@ jobs:
         run: npm ci
 
       - name: 生成脚本自检
-        # 先证明生成脚本里的护栏抓得住坏样本，再看它说「通过」值不值得信。
         run: python tools/build-site.py --selftest
 
       - name: 从内容仓生成站点页面
@@ -54,14 +51,12 @@ jobs:
         run: node tools/check-legal.mjs
 
       - name: 产物体检自检
-        # 抓「生成出来是空的」这类静默故障：正文为空会 exit 1 阻断部署。
         run: python tools/check-pages.py --selftest
 
       - name: 产物体检
         run: python tools/check-pages.py
 
       - name: 字号结构闸门自检
-        # 每篇必须有谜面/谜底/解析/出处四段且顺序正确。先证明它抓得住坏样本。
         run: node tools/check-typography.mjs --selftest
 
       - name: 字号结构闸门
@@ -71,7 +66,7 @@ jobs:
         run: node tools/check-ui.mjs --selftest
 
       - name: UI 闸门
-        # CNAME 必须是 zimi.diuci.com，title 含「字谜」，nav 含索引/数据来源。
+        # CNAME 必须是 zimi.diuci.com，title 含「猜字谜」，顶栏乐园组 + 统一页脚 + 令牌逐字节。
         run: node tools/check-ui.mjs
 
       - name: 构建站点
@@ -79,18 +74,14 @@ jobs:
         env:
           SITE_BASE: '/'
 
-      - name: 上传 Pages 产物
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site/.vitepress/dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: 部署到 GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: 推 dist 到 gh-pages 分支
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 孤儿分支：只放构建产物，不带 main 的历史
+          git checkout --orphan gh-pages
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -r site/.vitepress/dist/. .
+          git add -A
+          git commit -m "deploy: 猜字谜分站 $(date -u +%Y%m%dT%H%M%SZ)"
+          git push origin gh-pages --force
