@@ -5,8 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# 分支部署：构建后把 dist 推到 gh-pages 分支，Pages 源指向该分支。
-# （该账号「更新 Pages 站点」API 不可用，切不了 GitHub Actions 部署模式，故走分支。）
+# 该账号「更新/停用 Pages 站点」API 不可用（PATCH 404、DELETE 422），
+# Pages 源被锁在 main /。故构建后把 dist 内容直接落到 main 根，Pages 即 serve。
+# 防死循环：deploy: 开头的提交是工作流自己推的，遇到就整条跳过。
 permissions:
   contents: write
 
@@ -23,68 +24,81 @@ jobs:
       - name: 检出站点仓
         uses: actions/checkout@v5
 
+      - name: 读出当前提交主题
+        id: head
+        run: echo "msg=$(git log -1 --pretty=%s)" >> "$GITHUB_OUTPUT"
+
       - name: 检出内容仓
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         uses: actions/checkout@v5
         with:
           repository: diuci/chinese-character-riddle
           path: content
 
       - name: 设置 Node
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
       - name: 安装依赖
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: npm ci
 
       - name: 生成脚本自检
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: python tools/build-site.py --selftest
 
       - name: 从内容仓生成站点页面
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: python tools/build-site.py
 
       - name: 法律护栏自检
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-legal.mjs --selftest
 
       - name: 法律护栏
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-legal.mjs
 
       - name: 产物体检自检
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: python tools/check-pages.py --selftest
 
       - name: 产物体检
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: python tools/check-pages.py
 
       - name: 字号结构闸门自检
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-typography.mjs --selftest
 
       - name: 字号结构闸门
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-typography.mjs
 
       - name: UI 闸门自检
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-ui.mjs --selftest
 
       - name: UI 闸门
-        # CNAME 必须是 zimi.diuci.com，title 含「猜字谜」，顶栏乐园组 + 统一页脚 + 令牌逐字节。
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-ui.mjs
 
       - name: 构建站点
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: npm run build
         env:
           SITE_BASE: '/'
 
-      - name: 推 dist 到 gh-pages 分支
+      - name: 把 dist 落到 main 根并推送
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 先把 dist 搬到仓库外：git clean -fdx 会连 node_modules/site/content 一起删，
-          # 搬到 /tmp 才不会被误删；删完再搬回来，gh-pages 就只剩构建产物。
-          rm -rf /tmp/zimi-dist && cp -r site/.vitepress/dist /tmp/zimi-dist
-          git checkout --orphan gh-pages
-          git rm -rf . >/dev/null 2>&1 || true
-          git clean -fdx >/dev/null 2>&1 || true
-          cp -r /tmp/zimi-dist/. .
+          # dist 内容与源码并存于根：源码在 tools/、site/，产物在 index.html、assets/、riddles/…
+          cp -r site/.vitepress/dist/. .
           git add -A
           git commit -m "deploy: 猜字谜分站 $(date -u +%Y%m%dT%H%M%SZ)"
-          git push origin gh-pages --force
+          git push origin main
