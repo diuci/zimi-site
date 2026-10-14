@@ -78,14 +78,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 先把 dist 搬出去：git clean 会连 node_modules/site/content 一起删，
-          # 删完再搬回来，gh-pages 就只剩构建产物。
-          cp -r site/.vitepress/dist "$GITHUB_WORKSPACE/.dist-tmp"
+          # 先把 dist 搬到仓库外：git clean -fdx 会连 node_modules/site/content 一起删，
+          # 搬到 /tmp 才不会被误删；删完再搬回来，gh-pages 就只剩构建产物。
+          rm -rf /tmp/zimi-dist && cp -r site/.vitepress/dist /tmp/zimi-dist
           git checkout --orphan gh-pages
           git rm -rf . >/dev/null 2>&1 || true
           git clean -fdx >/dev/null 2>&1 || true
-          cp -r "$GITHUB_WORKSPACE/.dist-tmp/." .
-          rm -rf "$GITHUB_WORKSPACE/.dist-tmp"
+          cp -r /tmp/zimi-dist/. .
           git add -A
           git commit -m "deploy: 猜字谜分站 $(date -u +%Y%m%dT%H%M%SZ)"
           git push origin gh-pages --force
