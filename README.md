@@ -2,7 +2,7 @@
 
 字谜分站，构建产物发布到 <https://zimi.diuci.com>。
 
-> 内容规模以内容仓 `docs/scope.md` 契约为准（M2 起 56 篇，覆盖全 10 谜种）。
+> 内容规模以内容仓 `docs/scope.md` 契约为准（M2 起 70 篇，覆盖全 10 谜种）。
 
 本仓只存放**站点呈现层**：页面骨架、样式、主题与部署流程。
 所有字谜内容来自 [diuci/chinese-character-riddle](https://github.com/diuci/chinese-character-riddle)，由 CI 在构建时检出。
