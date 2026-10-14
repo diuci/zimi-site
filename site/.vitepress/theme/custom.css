@@ -1,0 +1,770 @@
+/**
+ * 字谜分站 zimi.diuci.com 样式
+ *
+ * 视觉基准：diuci.com 主站「墨戏童趣」风格，与学古诗 k12.diuci.com 同源。
+ *   · 宣纸底 + 多层噪声纹理 + 角落淡彩晕染
+ *   · 朱砂红作主强调色（印章、链接、标题着重号）
+ *   · 墨色正文 / 靛青 / 青瓷 / 哑金 四色辅助
+ *   · 正文衬线、标题圆体，与主站字体栈一致
+ *
+ * 主题：与主站同一套机制，由 ThemeToggle.vue 写 <html data-theme="light|dark">。
+ * 之所以不沿用 VitePress 自带的 html.dark：
+ *   1) 它自带的开关只在 >=1280px 显示，窄屏看不到；
+ *   2) 它的 isDark 依赖 config 里显式声明 appearance，未声明时退化成常量。
+ * data-theme 是显式状态，不受上述两处限制影响。
+ */
+
+/* 设计令牌正本：本站存一份字节一样的副本（tools/check-ui.mjs 比对 sha256） */
+@import './tokens.css';
+
+/* 本站别名 + VitePress 内建组件的令牌映射：能指正本的都指过去 */
+:root {
+  --font-serif: var(--serif);
+  --font-round: var(--round);
+  --font-kai: var(--brush);
+  --dc-radius: var(--radius);
+
+  --vp-c-brand-1: var(--cinnabar);
+  --vp-c-brand-2: var(--cinnabar-deep);
+  --vp-c-brand-3: #8f2c1e;
+  --vp-c-brand-soft: rgba(200, 68, 46, 0.12);
+  --vp-c-bg: var(--paper);
+  --vp-c-bg-alt: #faf6ec;
+  --vp-c-bg-soft: #efe7d7;
+  --vp-c-bg-elv: var(--card-hi);
+  --vp-c-text-1: var(--ink);
+  --vp-c-text-2: var(--ink-soft);
+  --vp-c-text-3: var(--ink-faint);
+  --vp-c-divider: var(--line);
+  --vp-c-gutter: #e3d8c4;
+  --vp-c-border: #ddd0b8;
+}
+
+/* 夜墨：本站只补 VitePress 那一份，宣纸/夜墨本身在正本里 */
+:root[data-theme='dark'],
+html.dark {
+  --vp-c-brand-1: var(--cinnabar);
+  --vp-c-brand-2: var(--cinnabar-deep);
+  --vp-c-brand-3: #f49b81;
+  --vp-c-brand-soft: rgba(226, 105, 76, 0.14);
+  --vp-c-bg: var(--paper);
+  --vp-c-bg-alt: #1d1913;
+  --vp-c-bg-soft: var(--paper-2);
+  --vp-c-bg-elv: var(--card-hi);
+  --vp-c-text-1: var(--ink);
+  --vp-c-text-2: var(--ink-soft);
+  --vp-c-text-3: var(--ink-faint);
+  --vp-c-divider: var(--line);
+  --vp-c-gutter: #2a241c;
+  --vp-c-border: #453c30;
+}
+
+/* ---------------------------------------------------------------- 纸面 */
+body {
+  font-family: var(--font-serif);
+  background: var(--paper);
+  color: var(--ink);
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+/* 宣纸纹理：噪声 + 角落晕染，固定在视口底层 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--grain-op);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+  transition: opacity 0.45s ease;
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% -8%, var(--wash-1), transparent 62%),
+    radial-gradient(ellipse 70% 50% at 100% 8%, var(--wash-2), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 0% 30%, var(--wash-3), transparent 62%);
+}
+.VPNav,
+.VPSidebar,
+.VPContent,
+.VPDoc,
+.VPPage,
+.VPHome {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------------------------------------------------------- 导航
+   尺寸逐项对齐主站 nav：印章 40px、站名 21px、栏高 66px、
+   主题按钮 38px、导航项 14.5px。 */
+:root {
+  --vp-nav-height: 67px;
+  --vp-layout-max-width: 1160px;
+}
+.VPNavBar {
+  background: var(--nav-bg) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line) !important;
+  transition: background-color 0.45s ease, border-color 0.45s ease;
+}
+.VPNavBar .container {
+  max-width: 1160px;
+  padding: 0 24px;
+}
+.VPNavBar .wrapper {
+  height: 66px;
+  padding: 0 24px;
+  gap: 28px;
+}
+.VPNavBarTitle .title {
+  font-family: var(--font-round);
+  font-weight: 400;
+  font-size: 21px;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  align-content: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 11px;
+  row-gap: 1px;
+}
+
+/* 印章由 CSS 画：本站的「猜」，与主站「词」、学古诗「诗」同一语言。
+   尺寸、圆角、渐变、倾角、投影逐项照主站 .seal。 */
+.VPNavBarTitle .logo {
+  display: none !important;
+}
+.VPNavBarTitle .title::before {
+  content: '猜';
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: linear-gradient(155deg, var(--cinnabar), var(--cinnabar-deep));
+  color: var(--on-accent);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-round);
+  font-size: 23px;
+  line-height: 1;
+  box-shadow: 0 3px 10px -2px rgba(200, 68, 46, 0.5);
+  transform: rotate(-4deg);
+}
+/* 站名下的拉丁副标 DIUCI，与主站 brand-s 同构 */
+.VPNavBarTitle .title::after {
+  content: 'DIUCI';
+  grid-column: 2;
+  grid-row: 2;
+  font-family: var(--font-round);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  line-height: 1.8;
+  color: var(--ink-faint);
+}
+
+/* 导航在窄区间收起断点提到 960px，与侧栏断点对齐 */
+@media (max-width: 960px) {
+  .VPNavBarMenu {
+    display: none !important;
+  }
+  .VPNavBarHamburger {
+    display: flex !important;
+  }
+}
+
+/* 顶部导航项：朱砂下划线，尺寸同主站 */
+.VPNavBarMenu {
+  gap: 26px !important;
+  margin-right: 28px;
+}
+.VPNavBarMenuLink,
+.VPNavBarMenuGroup .button {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 14.5px !important;
+  letter-spacing: normal;
+  padding: 4px 0 !important;
+  color: var(--ink-soft) !important;
+  transition: color 0.22s;
+}
+.VPNavBarMenuLink {
+  position: relative;
+}
+.VPNavBarMenuLink::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cinnabar);
+  transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuGroup:hover .button {
+  color: var(--cinnabar) !important;
+}
+.VPNavBarMenuLink:hover::before,
+.VPNavBarMenuLink.active::before {
+  width: 100%;
+}
+.VPNavBarMenuLink.active {
+  color: var(--cinnabar) !important;
+}
+
+/* 明暗切换：隐藏 VitePress 自带那颗，改用 ThemeToggle.vue */
+.VPNavBarAppearance {
+  display: none !important;
+}
+.dc-theme-btn {
+  width: var(--btn-round);
+  height: var(--btn-round);
+  flex: 0 0 var(--btn-round);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+.dc-theme-btn:hover {
+  background: var(--vp-c-brand-soft);
+  color: var(--cinnabar);
+  border-color: var(--cinnabar);
+  transform: translateY(-2px);
+}
+.dc-theme-btn svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.dc-theme-btn .i-sun {
+  display: block;
+}
+.dc-theme-btn .i-moon {
+  display: none;
+}
+:root[data-theme='dark'] .dc-theme-btn .i-sun {
+  display: none;
+}
+:root[data-theme='dark'] .dc-theme-btn .i-moon {
+  display: block;
+}
+
+/* 繁简钮：顶栏右侧、明暗钮左边，同尺寸同描边，字用圆体 */
+.dc-lang-btn {
+  width: var(--btn-round);
+  height: var(--btn-round);
+  flex: 0 0 var(--btn-round);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-round);
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+.dc-lang-btn:hover {
+  background: var(--vp-c-brand-soft);
+  color: var(--cinnabar);
+  border-color: var(--cinnabar);
+}
+
+/* 外链箭头与抽屉里的 Appearance 行：与主站一致，去掉 */
+.vp-external-link-icon::after {
+  display: none !important;
+}
+.VPNavScreen .item.appearance,
+.VPNavBarExtra .item.appearance,
+.VPNavScreenAppearance {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------------- 侧边栏 */
+.VPSidebar {
+  background: transparent !important;
+  border-right: 1px solid var(--line) !important;
+}
+@media (min-width: 960px) {
+  .VPSidebar {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding-top: var(--vp-nav-height) !important;
+  }
+  .VPSidebar::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+.VPSidebarItem.level-0 > .item > .text {
+  font-family: var(--font-round);
+  font-weight: 400;
+  color: var(--ink) !important;
+  letter-spacing: 0.06em;
+}
+.VPSidebarItem .link {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  transition: color 0.2s, background-color 0.2s;
+}
+.VPSidebarItem .link:hover {
+  color: var(--cinnabar) !important;
+}
+.VPSidebarItem.is-active > .item .link {
+  color: var(--cinnabar) !important;
+  font-weight: 600;
+}
+.VPSidebarItem.is-active > .item .link::before {
+  background: var(--cinnabar) !important;
+}
+.VPFadeGroup .title {
+  font-family: var(--font-round);
+  font-weight: 400;
+}
+
+/* ---------------------------------------------------------------- 正文排版 */
+.VPDoc h1,
+.VPDoc h2,
+.VPDoc h3,
+.VPDoc h4 {
+  font-family: var(--font-round);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+}
+.VPDoc h2 {
+  border-top-color: var(--line);
+  padding-top: 24px;
+  margin-top: 40px;
+}
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.9;
+}
+.vp-doc a {
+  color: var(--cinnabar);
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+.vp-doc a:hover {
+  color: var(--cinnabar-deep);
+}
+.vp-doc hr {
+  border-color: var(--line);
+}
+.vp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.vp-doc th {
+  background: var(--vp-c-bg-soft);
+  font-family: var(--font-round);
+  font-weight: 400;
+  border-color: var(--line);
+}
+.vp-doc td {
+  border-color: var(--line);
+}
+.vp-doc tr:hover td {
+  background: var(--surface);
+}
+.vp-doc kbd,
+.vp-doc code {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+.vp-doc kbd {
+  background: var(--vp-c-bg-soft) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 5px !important;
+  box-shadow: none !important;
+  color: var(--ink) !important;
+}
+
+/* 目录（右侧 outline）与本地导航 */
+.VPDocOutlineItem .link {
+  font-weight: 400;
+  transition: color 0.2s;
+}
+.VPDocOutlineItem .link:hover,
+.VPDocOutlineItem .link.active {
+  color: var(--cinnabar) !important;
+}
+.VPDocAsideOutline .outline-marker {
+  background: var(--cinnabar);
+}
+
+/* 上一篇 / 下一篇 */
+.VPDocFooter .pager-link {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--dc-radius);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.VPDocFooter .pager-link:hover {
+  border-color: var(--cinnabar);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.VPDocFooter .pager-link .desc {
+  color: var(--cinnabar);
+  font-family: var(--font-round);
+}
+
+/* ---------------------------------------------------------------- 搜索 */
+.VPLocalSearchBox .search {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.VPLocalSearchBox .search:focus-within {
+  border-color: var(--cinnabar);
+}
+.VPLocalSearchBox .search-bar {
+  background: transparent !important;
+}
+.VPLocalSearchBox .search-input {
+  font-family: var(--font-serif);
+}
+.VPModal .search .search-input {
+  font-family: var(--font-serif);
+  font-size: 16px;
+}
+.VPModal .search {
+  border-radius: var(--dc-radius);
+  border: 1px solid var(--line);
+  background: var(--vp-c-bg-elv);
+}
+.VPModal .result .title {
+  font-family: var(--font-round);
+}
+.VPModal .result .title mark {
+  background: var(--vp-c-brand-soft);
+  color: var(--cinnabar);
+  border-radius: 3px;
+}
+
+/* ---------------------------------------------------------------- 页脚
+   主站：footer{border-top;padding:38px 0;margin-top:34px;background:var(--surface-3)} */
+.VPFooter {
+  background: var(--surface-3) !important;
+  border-top: 1px solid var(--line);
+  margin-top: 34px;
+}
+.VPFooter .container {
+  max-width: 1160px;
+  padding: 38px 24px;
+}
+.VPFooter .message,
+.VPFooter .copyright {
+  font-family: var(--font-serif);
+  color: var(--ink-faint);
+  line-height: 1.9;
+}
+.VPFooter a {
+  color: var(--cinnabar);
+  font-weight: 500;
+}
+
+/* 「上次更新」 */
+.VPDoc .last-updated .prefix {
+  color: var(--ink-faint);
+}
+
+/* ================================================================
+   首页首屏（VitePress 内建 home 布局：hero + features）
+   让内建组件吃宣纸令牌色，与主站 .hero 同一语言。 */
+.VPHome .VPHomeHero {
+  background: transparent;
+}
+.VPHome .VPHomeHero .name {
+  font-family: var(--font-round);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.VPHome .VPHomeHero .clip {
+  display: none;
+}
+.VPHome .tagline {
+  font-family: var(--font-kai);
+  color: var(--ink-soft);
+}
+.VPHome .VPHomeActions .action .theme-brand {
+  font-family: var(--font-round);
+  background: var(--cinnabar);
+  box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--cinnabar) 65%, transparent);
+}
+.VPHome .VPHomeActions .action .theme-brand:hover {
+  background: var(--cinnabar-deep);
+}
+.VPHome .VPHomeActions .action .theme-alt {
+  font-family: var(--font-round);
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+}
+.VPHome .VPHomeActions .action .theme-alt:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* features 卡：宣纸卡质感 */
+.VPHome .VPFeatures .item {
+  background: var(--card-grad);
+  border: 1px solid var(--line);
+  border-radius: var(--dc-radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, border-color 0.2s;
+}
+.VPHome .VPFeatures .item:hover {
+  border-color: var(--cinnabar);
+  transform: translateY(-2px);
+}
+.VPHome .VPFeatures .item .icon {
+  font-size: 30px;
+}
+.VPHome .VPFeatures .item h3 {
+  font-family: var(--font-round);
+  font-weight: 400;
+}
+.VPHome .VPFeatures .item p {
+  font-family: var(--font-kai);
+  color: var(--ink-soft);
+}
+
+/* ================================================================
+   字谜内容页
+   生成器输出标准 Markdown：
+   # 谜面（h1）
+   > 谜种 · 朝代 · 难度（引用行 = 眉标）
+   **谜面**：… / **谜底**：…（加粗内联）
+   ## 解析 / ## 出处（h2）
+   ================================================================ */
+
+/* h1 谜面标题：圆体、大字、朱砂着重 */
+.vp-doc h1 {
+  font-family: var(--font-round);
+  font-size: 2.3rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 18px;
+  margin-bottom: 8px;
+}
+
+/* 引用行 = 眉标（谜种 · 朝代 · 难度）：朱砂淡底胶囊感 */
+.vp-doc blockquote {
+  border-left: 3px solid var(--cinnabar);
+  background: var(--surface);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 18px;
+  margin: 0 0 24px;
+  font-family: var(--font-kai);
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+/* 谜面 / 谜底：加粗内联，谜面行给一道朱砂左边线强调 */
+.vp-doc p strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* 解析 / 出处 h2：圆体、朱砂，去掉默认上边距过大的留白 */
+.vp-doc h2 {
+  font-family: var(--font-round);
+  color: var(--cinnabar);
+  font-size: 1.4rem;
+}
+.vp-doc h3 {
+  font-family: var(--font-round);
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
+/* 行内代码 */
+.vp-doc :not(pre) > code {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 0.1em 0.4em;
+  color: var(--ink);
+}
+
+/* ---------------------------------------------------------------- 打印版 */
+.page-break {
+  page-break-before: always;
+}
+@media print {
+  .VPSidebar,
+  .VPNavBar,
+  .VPLocalNav,
+  .VPDocFooter,
+  .vp-doc .header-anchor,
+  .VPFooter,
+  .VPDocAside,
+  .dc-tabbar {
+    display: none !important;
+  }
+  .vp-doc,
+  .VPDoc,
+  .VPPage {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  .Content {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+  }
+  body::before,
+  body::after {
+    display: none !important;
+  }
+  .vp-doc h1 {
+    font-size: 16pt;
+    border-bottom: 1px solid #999;
+  }
+  .vp-doc blockquote {
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+/* ==================================================================
+   移动端 App 风格：底部标签栏
+   ================================================================== */
+.dc-tabbar {
+  display: none;
+}
+@media (max-width: 768px) {
+  .dc-tabbar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    z-index: 80;
+    height: calc(58px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: var(--nav-bg);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -2px 18px -8px rgba(36, 31, 26, 0.28);
+  }
+  .dc-tab {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    text-decoration: none;
+    color: var(--ink-faint);
+    transition: color 0.2s, transform 0.12s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .dc-tab:active {
+    transform: scale(0.9);
+  }
+  .dc-tab .ic {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .dc-tab .tx {
+    font-family: var(--font-round);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+  .dc-tab.on {
+    color: var(--cinnabar);
+  }
+  .dc-tab.on .ic {
+    stroke-width: 2;
+  }
+  body {
+    padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px));
+  }
+  :root {
+    --vp-nav-height: 57px;
+  }
+  .VPNavBar .wrapper {
+    height: 56px;
+    padding: 0;
+    gap: 10px;
+  }
+  .VPNavBar .container {
+    padding: 0 16px;
+  }
+  .VPNavBarTitle .title {
+    font-size: 18px;
+  }
+  .VPNavBarTitle .title::before {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    font-size: 20px;
+  }
+  .dc-theme-btn {
+    width: var(--btn-round-sm);
+    height: var(--btn-round-sm);
+    flex: 0 0 var(--btn-round-sm);
+  }
+  .dc-theme-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+  .dc-lang-btn {
+    width: var(--btn-round-sm);
+    height: var(--btn-round-sm);
+    flex: 0 0 var(--btn-round-sm);
+  }
+  .VPNavBarSearch {
+    display: none;
+  }
+}

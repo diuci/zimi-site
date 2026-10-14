@@ -1,0 +1,20 @@
+# Node
+node_modules/
+
+# 生成产物（由 tools/build-site.py 生成，可重新生成，不入库）
+site/riddles/
+site/trad/
+site/public/catalog.json
+site/.vitepress/dist/
+site/.vitepress/cache/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

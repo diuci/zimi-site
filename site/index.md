@@ -1,0 +1,27 @@
+---
+layout: home
+hero:
+  name: 猜字谜
+  text: 分门别类的开源字谜
+  tagline: 谜面 · 谜底 · 解析，按谜种 / 难度 / 标签浏览，可搜索可打印，繁简可切
+  actions:
+    - theme: brand
+      text: 浏览全部字谜
+      link: /riddles/索引
+    - theme: alt
+      text: 数据来源与版权
+      link: /sources
+features:
+  - icon: 🀄
+    title: 分门别类
+    details: 按谜种（拆字 / 会意 / 谐音 / 增损 / 离合 / 典故 / 象形 / 方位 / 数字 / 当代）组织，再按难度与标签交叉索引。
+  - icon: ✅
+    title: 质量优先
+    details: 唯一谜底、解析完备、来源可溯、无近似重复——任何一条不满足，内容仓构建失败。
+  - icon: 🔓
+    title: 公版安全
+    details: 古典公版逐篇核验；我方原创当代谜 CC BY 4.0。侵权联系 hi@diuci.com。
+  - icon: 📄
+    title: 单一事实源
+    details: 内容来自 diuci/chinese-character-riddle，本仓只存呈现层，CI 检出后生成页面。
+---
