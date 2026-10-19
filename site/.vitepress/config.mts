@@ -3,8 +3,8 @@ import { defineConfig } from 'vitepress'
 // 字谜分站：zimi.diuci.com。内容来自 diuci/chinese-character-riddle，CI 检出后生成。
 const base = process.env.SITE_BASE || '/'
 
-// 印章「猜」：本站自己的字。主站是「词」、学古诗是「诗」、连词成句是「连」、
-// 汉兜是「兜」、遗失月冕是「月」、丢词大作战是「战」，各站各一枚，一眼分得清。
+// 印章「猜」：本站自己的字。主站是「词」、学古诗是「诗」、连词是「连」、
+// 汉兜是「兜」、月冕是「月」、大作战是「战」，各站各一枚，一眼分得清。
 // 顶栏那枚印章由 custom.css 用圆体画；这里这份 SVG 只当 favicon 用。
 const SEAL =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c8442e'/%3E%3Ctext x='32' y='45' font-size='40' text-anchor='middle' fill='%23f7f1e3' font-family='serif'%3E%E7%8C%9C%3C/text%3E%3C/svg%3E"
@@ -46,16 +46,17 @@ export default defineConfig({
     // 侧栏抽屉的折叠按钮文案
     sidebarMenuLabel: '目录',
 
-    // 顶部导航与主站 diuci.com 同一组、同一顺序、同一措辞。
-    // 本站「字谜」是第 7 个乐园，标成当前页。
+    // 顶部导航与主站 diuci.com 同一组、同一顺序、同一措辞（八项乐园）。
+    // 本站「猜谜」是第 5 个乐园，标成当前页。
     nav: [
       { text: '首页', link: 'https://diuci.com/' },
       { text: '学古诗', link: 'https://k12.diuci.com/' },
-      { text: '连词成句', link: 'https://lian.diuci.com/' },
+      { text: '画甲骨', link: 'https://jiagu.diuci.com/' },
+      { text: '连词', link: 'https://lian.diuci.com/' },
+      { text: '猜谜', link: '/', activeMatch: '^/$|^/riddles/|^/trad/' },
       { text: '汉兜', link: 'https://handle.diuci.com/' },
-      { text: '遗失月冕', link: 'https://moon.diuci.com/' },
-      { text: '丢词大作战', link: 'https://ink.diuci.com/' },
-      { text: '猜字谜', link: '/', activeMatch: '^/$|^/riddles/|^/trad/' },
+      { text: '月冕', link: 'https://moon.diuci.com/' },
+      { text: '大作战', link: 'https://ink.diuci.com/' },
     ],
 
     // 侧栏只列简体谜（按谜种分组）；繁体靠顶栏「繁」钮切到 /trad/ 镜像页，不进侧栏。
@@ -66,7 +67,6 @@ export default defineConfig({
         items: [
           { text: '索引', link: '/riddles/索引' },
           { text: '打印版', link: '/print' },
-          { text: '数据来源', link: '/sources' },
           { text: '指南', link: '/guide' },
         ],
       },
@@ -172,17 +172,22 @@ export default defineConfig({
     footer: {
       message:
         '<a href="https://diuci.com/">丢词夺理 diuci.com</a> · 给孩子的字谜乐园' +
-        '<br />古典谜面/谜底/解析属公有领域 · 我方原创当代谜与注释 CC BY 4.0 · 代码 MIT · <a href="/sources">数据来源</a>',
+        '<br />古典谜面/谜底/解析属公有领域 · 我方原创当代谜与注释 CC BY 4.0 · 代码 MIT' +
+        '<br /><a href="https://k12.diuci.com/legal">原文公有领域 · 注释 CC BY 4.0 · 代码 MIT · 版权与免责</a>',
       copyright:
         '<a href="https://diuci.com/">丢词夺理 diuci.com</a> ·' +
         '<a href="https://k12.diuci.com/">学古诗</a> ·' +
-        '<a href="https://lian.diuci.com/">连词成句</a> ·' +
+        '<a href="https://jiagu.diuci.com/">画甲骨</a> ·' +
+        '<a href="https://lian.diuci.com/">连词</a> ·' +
+        '<a href="https://zimi.diuci.com/">猜谜</a> ·' +
         '<a href="https://handle.diuci.com/">汉兜</a> ·' +
-        '<a href="https://moon.diuci.com/">遗失月冕</a> ·' +
-        '<a href="https://ink.diuci.com/">丢词大作战</a> ·' +
-        '<a href="https://zimi.diuci.com/">猜字谜</a> ·' +
+        '<a href="https://moon.diuci.com/">月冕</a> ·' +
+        '<a href="https://ink.diuci.com/">大作战</a> ·' +
         '<a href="https://github.com/diuci/chinese-character-riddle">内容仓库</a>' +
-        '<br /><a href="/sources">数据来源</a> · <a href="mailto:hi@diuci.com">hi@diuci.com</a>',
+        '<br /><a href="https://k12.diuci.com/sources">数据来源与版权</a> · ' +
+        '<a href="https://k12.diuci.com/accuracy">内容准确性与台账</a> · ' +
+        '<a href="https://k12.diuci.com/legal">版权与免责</a> · ' +
+        '<a href="mailto:hi@diuci.com">hi@diuci.com</a>',
     },
 
     lastUpdated: true,
