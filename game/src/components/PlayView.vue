@@ -323,6 +323,8 @@ onMounted(() => {
   margin: 14px 0 4px;
   font-family: var(--serif); font-size: 30px; letter-spacing: 6px;
   text-align: center;
+  /* 长谜面（如「外面一口圈里面一口田」10 字）在窄屏必须能按字换行 */
+  word-break: break-all; line-height: 1.5;
 }
 .hintbar { display: flex; gap: 10px; align-items: center; margin: 10px 0 0; flex-wrap: wrap; }
 .hinttext { color: var(--ink-soft); font-size: 14px; }

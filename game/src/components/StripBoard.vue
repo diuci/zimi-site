@@ -29,6 +29,7 @@ const placed = ref([]) // 台上的件
 const selBlock = ref('') // 选中的来源字/件块
 const selOp = ref('') // 选中的操作
 const shake = ref(false) // 拆不出的反馈
+const missNote = ref('') // 拆不出的文字反馈（只晃动不够，孩子要知道为什么没反应）
 
 const blocks = computed(() => props.level === 'easy'
   ? partBlocks(props.riddle, props.charPool)
@@ -66,12 +67,15 @@ function tapOp(id) {
   if (!selBlock.value) return
   const part = tryOp(selBlock.value, id, props.riddle.structure, used.value)
   if (part === null) {
-    // 拆不出：晃一下，块保留，操作清空
+    // 拆不出：晃一下 + 文字说明，块保留，操作清空
     shake.value = true
+    missNote.value = '「' + selBlock.value + '」这样拆不出——换块料或换道工序'
     setTimeout(() => { shake.value = false }, 350)
+    setTimeout(() => { missNote.value = '' }, 2500)
     selOp.value = ''
     return
   }
+  missNote.value = ''
   place(part)
   selBlock.value = ''
   selOp.value = ''
@@ -136,7 +140,7 @@ function undoAll() {
 
     <div class="stripops">
       <button class="ghostbtn" @click="undoAll">重摆</button>
-      <span class="tip">{{ level === 'easy' ? '挑出拼成谜底的部件' : '挑一块料，选一道工序' }}</span>
+      <span class="tip">{{ missNote || (level === 'easy' ? '挑出拼成谜底的部件' : '挑一块料，选一道工序') }}</span>
     </div>
   </div>
 </template>
@@ -192,6 +196,7 @@ function undoAll() {
 }
 .ghostbtn:hover { border-color: var(--c-primary); color: var(--c-primary); }
 .tip { color: var(--ink-faint); font-size: 12.5px; }
+.tip:not(:empty) { color: var(--c-mis); }
 .shake { animation: shake .35s; }
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
