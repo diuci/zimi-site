@@ -12,6 +12,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { puzzleFor, dayKey, presentTypes } from '../game/src/logic/daily.mjs'
 import { scoreAnswer, nextCombo, unlockGoal } from '../game/src/logic/scoring.mjs'
+import { tryOp, isSolved, sourceBlocks, partBlocks } from '../game/src/logic/strip.mjs'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const CORPUS = resolve(HERE, '../game/src/data/corpus.json')
@@ -151,6 +152,39 @@ function selftest() {
       }
     }
     return true
+  })
+  // 解字台纯逻辑（strip.mjs）：判定与出件
+  const st = { ops: [{ part: '扌', from: '推', op: 'half' }, { part: '京', from: '就', op: 'half_r' }], result: '掠' }
+  add('strip：配对工序出件并消耗', () => {
+    const used = []
+    return tryOp('推', 'half', st, used) === '扌' && used.length === 1 ? true : '取左半没出件'
+  })
+  add('strip：配不上的 (字,操作) 拆不出', () => tryOp('推', 'half_r', st, []) === null ? true : '错的工序不该出件')
+  add('strip：同一工序重复消耗会被挡', () => {
+    const used = []
+    tryOp('推', 'half', st, used)
+    return tryOp('推', 'half', st, used) === null ? true : '同一声明被用了两次'
+  })
+  add('strip：多重集合判定（顺序无关、数量必齐）', () => {
+    const ok = isSolved(['京', '扌'], st)
+    const dup = isSolved(['扌', '扌'], st)
+    const miss = isSolved(['扌'], st)
+    return ok && !dup && !miss ? true : 'isSolved 判定错误'
+  })
+  add('strip：同 (字,操作) 声明多件时逐个出', () => {
+    const st2 = { ops: [{ part: '三', from: '春', op: 'part' }, { part: '人', from: '春', op: 'part' }], result: '秦' }
+    const used = []
+    const a = tryOp('春', 'part', st2, used)
+    const b = tryOp('春', 'part', st2, used)
+    return (a === '三' && b === '人') || (a === '人' && b === '三') ? true : '多件声明没逐个出'
+  })
+  add('strip：简档件块含全部真部件，中档字块含全部来源字', () => {
+    const r = { id: 'x', title: '半推半就', structure: st }
+    const pool = ['山', '水', '火', '口']
+    const pb = partBlocks(r, pool)
+    const sb = sourceBlocks(r, pool)
+    return ['扌', '京'].every((c) => pb.includes(c)) && ['推', '就'].every((c) => sb.includes(c))
+      ? true : '块面没盖住必需字符：' + JSON.stringify({ pb, sb })
   })
   console.log('[ok] check-puzzle --selftest 通过（' + cases.length + ' 项：' + cases.join('、') + '）')
   return process.exitCode || 0

@@ -10,6 +10,7 @@
 //   - 进度存 localStorage（dc-zimi-*），纯前端、无账号，与全站路线一致
 import { ref, computed, onMounted } from 'vue'
 import TypingPad from './TypingPad.vue'
+import StripBoard from './StripBoard.vue'
 import corpus from '../data/corpus.json'
 import { puzzleFor, dayKey, parseDayKey } from '../logic/daily.mjs'
 import { scoreAnswer, nextCombo } from '../logic/scoring.mjs'
@@ -52,6 +53,14 @@ const dailyLog = ref(loadJSON(DKEY, {}))
 const filterType = ref('全部')
 const filterDiff = ref(0) // 0 = 全部难度
 const recent = ref([]) // 练习模式最近出过的谜 id，避免连续重复
+const style = ref('strip') // 'strip' 拼装（解字台）| 'typing' 打字
+const level = ref('easy') // 解字台档位：easy 简 | mid 中（难档的减笔/加笔在步骤 6）
+
+const hasStructure = computed(() => !!(riddle.value && riddle.value.structure))
+const effDiff = computed(() => {
+  const d = riddle.value ? riddle.value.difficulty : 1
+  return Math.min(5, d + (style.value === 'strip' && level.value === 'mid' ? 1 : 0))
+})
 
 const TYPES = ['全部', ...Object.keys(corpus.types || {})]
 
@@ -75,6 +84,8 @@ function startRiddle(r, { isFrozen = false, dayStr = '' } = {}) {
   fails.value = 0
   lastPts.value = 0
   note.value = ''
+  style.value = r.structure ? 'strip' : 'typing'
+  level.value = 'easy'
 }
 
 function startDaily() {
@@ -116,11 +127,21 @@ function retry() {
 function onPick(ch) {
   if (phase.value !== 'asking' || !riddle.value) return
   const ok = String(ch).trim() === String(riddle.value.answer)
+  settle(ok)
+}
+
+/** 解字台拼成 → 成功（档位计分：简=难度、中=难度+1 封顶 5）。 */
+function onStripSolved() {
+  settle(true)
+}
+
+function settle(ok) {
+  if (phase.value !== 'asking' || !riddle.value) return
   if (ok) {
     result.value = 'ok'
     phase.value = 'revealed'
     if (props.mode === 'practice') {
-      const pts = scoreAnswer({ ok: true, difficulty: riddle.value.difficulty, combo: practice.value.combo, hint: hintUsed.value })
+      const pts = scoreAnswer({ ok: true, difficulty: effDiff.value, combo: practice.value.combo, hint: hintUsed.value })
       lastPts.value = pts
       practice.value = {
         ...practice.value,
@@ -213,18 +234,39 @@ onMounted(() => {
       <div class="mian">{{ riddle.title }}</div>
 
       <div v-if="phase === 'asking'">
+        <div class="stylebar" v-if="hasStructure">
+          <span class="stylelabel">玩法</span>
+          <button :class="{ on: style === 'strip' }" @click="style = 'strip'">拼装</button>
+          <button :class="{ on: style === 'typing' }" @click="style = 'typing'">打字</button>
+          <template v-if="style === 'strip'">
+            <span class="stylelabel">档位</span>
+            <button :class="{ on: level === 'easy' }" @click="level = 'easy'">简</button>
+            <button :class="{ on: level === 'mid' }" @click="level = 'mid'">中</button>
+          </template>
+        </div>
+
         <div class="hintbar">
           <button class="ghostbtn" :disabled="hintUsed" @click="hintUsed = true">
             {{ hintUsed ? '提示已给出' : '提示（本题得分减半）' }}
           </button>
           <span v-if="hintUsed" class="hinttext">{{ hintParts || jieShort }}</span>
         </div>
+
+        <StripBoard
+          v-if="hasStructure && style === 'strip'"
+          :riddle="riddle"
+          :level="level"
+          :char-pool="CHAR_POOL"
+          @solved="onStripSolved"
+        />
         <TypingPad
+          v-else
           :seed="riddle.id"
           :answer="String(riddle.answer)"
           :char-pool="CHAR_POOL"
           @pick="onPick"
         />
+
         <div class="noteline">
           <span v-if="note">{{ note }}</span>
           <button v-if="mode === 'practice' && fails" class="ghostbtn" @click="giveUp">看答案</button>
@@ -250,6 +292,15 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.stylebar { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+.stylelabel { color: var(--ink-faint); font-size: 12.5px; margin: 0 2px; }
+.stylebar button {
+  padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface-hi); color: var(--ink-soft);
+  font-size: 13px; cursor: pointer; font-family: var(--round);
+}
+.stylebar button.on { background: var(--c-primary); border-color: var(--c-primary); color: var(--paper); }
+.stylebar button:not(.on):hover { border-color: var(--c-primary); color: var(--c-primary); }
 .filters { margin-bottom: 12px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
 .chips button {
