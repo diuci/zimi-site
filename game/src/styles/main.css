@@ -1,0 +1,43 @@
+/* 猜谜 · 游戏端站点级样式。
+   颜色一律走 tokens.css 的变量，本文件不定义也不抄色值（规范 §1）。
+   本站独有的语义色用 var() 指过来：
+     --c-primary 主色（朱砂）
+     --c-ok 对 / --c-mis 错 */
+:root {
+  --c-primary: var(--cinnabar);
+  --c-ok: var(--celadon);
+  --c-mis: var(--gold);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--round);
+}
+.app { max-width: 720px; margin: 0 auto; padding: 16px 16px 40px; }
+
+.hdr h1 { margin: 0; font-size: 26px; letter-spacing: 2px; font-family: var(--serif); }
+.hdr .sub { margin: 4px 0 0; color: var(--ink-faint); font-size: 14px; }
+
+.tabs { display: flex; gap: 8px; margin: 20px 0 16px; }
+.tabs button {
+  flex: 1; padding: 10px 0; border: 1px solid var(--line);
+  background: var(--surface-hi); color: var(--ink); border-radius: 8px;
+  font-size: 15px; cursor: pointer; font-family: var(--round);
+  transition: border-color .18s, color .18s, background .18s;
+}
+.tabs button.on { background: var(--c-primary); color: var(--paper); border-color: var(--c-primary); }
+.tabs button:not(.on):hover { border-color: var(--c-primary); color: var(--c-primary); }
+
+.card {
+  background: var(--card-grad); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 22px 20px; box-shadow: var(--shadow);
+}
+.card h2 { margin: 0 0 8px; font-family: var(--serif); font-size: 19px; }
+.card p { margin: 0; line-height: 1.9; color: var(--ink-soft); font-size: 14.5px; }
+.card .soon {
+  display: inline-block; margin-top: 12px; padding: 3px 10px;
+  border: 1px solid var(--line); border-radius: 999px;
+  color: var(--ink-faint); font-size: 12.5px;
+}
