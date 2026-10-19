@@ -25,11 +25,19 @@ export function solvable(riddle) {
   return parts.length > 0 && isSolved(parts, st)
 }
 
-/** 谜面合法：非空、去掉首尾空白后 2–30 字、不把谜底直接写进谜面。 */
+// 极常用部件字白名单：答案是一/十/口/人这类字时，谜面里几乎不可能避开它们，
+// 「含答案字即泄底」会误伤（自检当场抓到：春雨绵绵妻独宿→一 的往返被自己拦下）。
+// 这些字出现在谜面里不构成泄底，豁免；其余答案字照旧拦截。
+const COMMON_CHARS = new Set('一二三四五六七八九十百千口人大小上下中出入山川水火日月天地田木天王'.split(''))
+
+/** 谜面合法：非空、去掉首尾空白后 2–30 字、不把谜底直接写进谜面
+ *  （极常用部件字白名单豁免——见 COMMON_CHARS）。 */
 export function validClue(text, answer) {
   const t = String(text || '').trim()
   if (t.length < 2 || t.length > 30) return false
-  return !t.includes(String(answer))
+  const a = String(answer)
+  if (t.includes(a) && !COMMON_CHARS.has(a)) return false
+  return true
 }
 
 /** 挑战编码：JSON → UTF-8 → base64url。纯前端、零后端，链接即谜。 */
