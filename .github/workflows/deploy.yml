@@ -79,6 +79,22 @@ jobs:
         if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-typography.mjs
 
+      - name: 谜库快照自检
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
+        run: node tools/sync-corpus.mjs --selftest
+
+      - name: 谜库快照漂移与冻结检查
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
+        run: node tools/sync-corpus.mjs --check
+
+      - name: 盘面闸门自检
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
+        run: node tools/check-puzzle.mjs --selftest
+
+      - name: 盘面闸门（快照自洽 + 每日 30 天回放 + 计分）
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
+        run: node tools/check-puzzle.mjs
+
       - name: UI 闸门自检
         if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-ui.mjs --selftest
