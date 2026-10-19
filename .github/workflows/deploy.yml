@@ -127,5 +127,7 @@ jobs:
           # 内容仓只用于构建，提交前删掉，免得混进 main 成 gitlink
           rm -rf content
           git add -A
-          git commit -m "deploy: 猜字谜分站 $(date -u +%Y%m%dT%H%M%SZ)"
+          # 内容没变时构建产物与上次部署字节相同，git add 后无变更——空提交
+          # 也照落：它标记「这次部署发生过」，deploy: 守卫会让下一条流水线整条跳过。
+          git commit --allow-empty -m "deploy: 猜字谜分站 $(date -u +%Y%m%dT%H%M%SZ)"
           git push origin main
