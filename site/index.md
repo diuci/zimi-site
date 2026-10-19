@@ -18,7 +18,7 @@ features:
   - icon: 🧩
     title: 解字台
     details: 把谜面的字拆出部件、亲手拼出谜底。简、中、难三档，从挑件到自己配工序。
-  - icon: �
+  - icon: ⚒
     title: 字谜工坊
     details: 挑一个字亲手拼出来，写上你的谜面，生成挑战链接发给朋友。
   - icon: 📄

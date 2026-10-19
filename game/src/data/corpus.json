@@ -1,6 +1,6 @@
 {
   "contentVersion": 1,
-  "sourceSha256": "374d7777ccc4288f14ecb0a9e75d0c7a500eab21910e49edd2438bba92cac6c6",
+  "sourceSha256": "44d449571e55ad5224c771e91c2d774cf5cc8dafdc06d8900ac323e985718503",
   "count": 98,
   "types": {
     "会意": 15,
@@ -480,7 +480,21 @@
       "type": "增损",
       "subtype": "左右",
       "difficulty": 1,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "子",
+            "from": "子",
+            "op": "full"
+          },
+          {
+            "part": "小",
+            "from": "小",
+            "op": "full"
+          }
+        ],
+        "result": "孙"
+      },
       "tags": [
         "增损",
         "左右",
@@ -552,7 +566,21 @@
       "type": "增损",
       "subtype": "叠字",
       "difficulty": 1,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "山",
+            "from": "山",
+            "op": "full"
+          },
+          {
+            "part": "山",
+            "from": "山",
+            "op": "full"
+          }
+        ],
+        "result": "出"
+      },
       "tags": [
         "叠字",
         "方位"
@@ -569,7 +597,21 @@
       "type": "增损",
       "subtype": "叠字",
       "difficulty": 1,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "人",
+            "from": "人",
+            "op": "free"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "free"
+          }
+        ],
+        "result": "从"
+      },
       "tags": [
         "增损",
         "叠字",
@@ -587,7 +629,26 @@
       "type": "增损",
       "subtype": "增减",
       "difficulty": 1,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "二",
+            "from": "二",
+            "op": "full"
+          },
+          {
+            "part": "丶",
+            "from": "点",
+            "op": "free"
+          }
+        ],
+        "result": "斗"
+      },
       "tags": [
         "增损",
         "数字"
@@ -755,7 +816,16 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "五",
+            "from": "此",
+            "op": "minus"
+          }
+        ],
+        "result": "五"
+      },
       "tags": [
         "增损",
         "减损"
@@ -829,7 +899,21 @@
       "type": "增损",
       "subtype": "组合",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "二",
+            "from": "二",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "夫"
+      },
       "tags": [
         "增损",
         "组合",
@@ -865,7 +949,16 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "侯",
+            "from": "猴",
+            "op": "minus"
+          }
+        ],
+        "result": "侯"
+      },
       "tags": [
         "增损",
         "减损"
@@ -882,7 +975,16 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "门",
+            "from": "涧",
+            "op": "minus"
+          }
+        ],
+        "result": "门"
+      },
       "tags": [
         "增损",
         "减损"
@@ -899,7 +1001,26 @@
       "type": "增损",
       "subtype": "增减",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "丶",
+            "from": "点",
+            "op": "free"
+          },
+          {
+            "part": "丶",
+            "from": "点",
+            "op": "free"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "火"
+      },
       "tags": [
         "增损",
         "增减"
@@ -952,7 +1073,21 @@
       "type": "增损",
       "subtype": "上下",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "日",
+            "from": "日",
+            "op": "free"
+          }
+        ],
+        "result": "早"
+      },
       "tags": [
         "增损",
         "上下"
@@ -969,7 +1104,21 @@
       "type": "增损",
       "subtype": "左右",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "口",
+            "from": "田",
+            "op": "part"
+          },
+          {
+            "part": "十",
+            "from": "田",
+            "op": "part"
+          }
+        ],
+        "result": "叶"
+      },
       "tags": [
         "增损",
         "左右"
@@ -986,7 +1135,21 @@
       "type": "增损",
       "subtype": "嵌字",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "囗",
+            "from": "田",
+            "op": "minus"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "囚"
+      },
       "tags": [
         "增损",
         "嵌字"
@@ -1003,7 +1166,16 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "王",
+            "from": "往",
+            "op": "minus"
+          }
+        ],
+        "result": "王"
+      },
       "tags": [
         "增损",
         "减损"
@@ -1046,7 +1218,21 @@
       "type": "增损",
       "subtype": "增减",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "一",
+            "from": "一",
+            "op": "full"
+          },
+          {
+            "part": "火",
+            "from": "火",
+            "op": "full"
+          }
+        ],
+        "result": "灭"
+      },
       "tags": [
         "增损",
         "自然"
@@ -1094,7 +1280,26 @@
       "type": "增损",
       "subtype": "增减",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "大",
+            "from": "人",
+            "op": "free"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "夹"
+      },
       "tags": [
         "增损",
         "人体"
@@ -1111,7 +1316,26 @@
       "type": "增损",
       "subtype": "叠字",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "仨"
+      },
       "tags": [
         "增损",
         "叠字",
@@ -1129,7 +1353,21 @@
       "type": "增损",
       "subtype": "左右",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "又",
+            "from": "又",
+            "op": "full"
+          },
+          {
+            "part": "寸",
+            "from": "分",
+            "op": "free"
+          }
+        ],
+        "result": "对"
+      },
       "tags": [
         "增损",
         "左右"
@@ -1204,7 +1442,21 @@
       "type": "增损",
       "subtype": "左右",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "差",
+            "from": "差",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "八",
+            "op": "free"
+          }
+        ],
+        "result": "嗟"
+      },
       "tags": [
         "增损",
         "左右"
@@ -1221,7 +1473,21 @@
       "type": "增损",
       "subtype": "各半",
       "difficulty": 3,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "禾",
+            "from": "秋",
+            "op": "half"
+          },
+          {
+            "part": "日",
+            "from": "春",
+            "op": "part"
+          }
+        ],
+        "result": "香"
+      },
       "tags": [
         "各半",
         "合成"
@@ -1238,7 +1504,21 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 3,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "土",
+            "from": "城",
+            "op": "half"
+          },
+          {
+            "part": "也",
+            "from": "池",
+            "op": "half_r"
+          }
+        ],
+        "result": "地"
+      },
       "tags": [
         "增损",
         "减损"
@@ -1255,7 +1535,21 @@
       "type": "增损",
       "subtype": "上下",
       "difficulty": 3,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "雨",
+            "from": "雨",
+            "op": "full"
+          },
+          {
+            "part": "彐",
+            "from": "山",
+            "op": "free"
+          }
+        ],
+        "result": "雪"
+      },
       "tags": [
         "增损",
         "上下"
@@ -1272,7 +1566,21 @@
       "type": "增损",
       "subtype": "左右",
       "difficulty": 3,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "钅",
+            "from": "钱",
+            "op": "free"
+          },
+          {
+            "part": "昔",
+            "from": "昔",
+            "op": "free"
+          }
+        ],
+        "result": "错"
+      },
       "tags": [
         "增损",
         "左右"
@@ -1289,7 +1597,16 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 3,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "黑",
+            "from": "黔",
+            "op": "minus"
+          }
+        ],
+        "result": "黑"
+      },
       "tags": [
         "增损",
         "减损"
@@ -1306,7 +1623,21 @@
       "type": "增损",
       "subtype": "上下",
       "difficulty": 3,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "艹",
+            "from": "新",
+            "op": "free"
+          },
+          {
+            "part": "甲",
+            "from": "茅",
+            "op": "free"
+          }
+        ],
+        "result": "茄"
+      },
       "tags": [
         "增损",
         "上下",
@@ -1324,7 +1655,21 @@
       "type": "增损",
       "subtype": "左右",
       "difficulty": 3,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "日",
+            "from": "日",
+            "op": "full"
+          },
+          {
+            "part": "乚",
+            "from": "钩",
+            "op": "free"
+          }
+        ],
+        "result": "电"
+      },
       "tags": [
         "增损",
         "左右"
@@ -1398,7 +1743,16 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 4,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "一",
+            "from": "春",
+            "op": "minus"
+          }
+        ],
+        "result": "一"
+      },
       "tags": [
         "增损",
         "减损"
