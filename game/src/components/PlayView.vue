@@ -54,12 +54,13 @@ const filterType = ref('全部')
 const filterDiff = ref(0) // 0 = 全部难度
 const recent = ref([]) // 练习模式最近出过的谜 id，避免连续重复
 const style = ref('strip') // 'strip' 拼装（解字台）| 'typing' 打字
-const level = ref('easy') // 解字台档位：easy 简 | mid 中（难档的减笔/加笔在步骤 6）
+const level = ref('easy') // 解字台档位：easy 简 | mid 中 | hard 难（减笔/加笔）
 
 const hasStructure = computed(() => !!(riddle.value && riddle.value.structure))
 const effDiff = computed(() => {
   const d = riddle.value ? riddle.value.difficulty : 1
-  return Math.min(5, d + (style.value === 'strip' && level.value === 'mid' ? 1 : 0))
+  const bump = style.value === 'strip' ? (level.value === 'mid' ? 1 : level.value === 'hard' ? 2 : 0) : 0
+  return Math.min(5, d + bump)
 })
 
 const TYPES = ['全部', ...Object.keys(corpus.types || {})]
@@ -242,6 +243,7 @@ onMounted(() => {
             <span class="stylelabel">档位</span>
             <button :class="{ on: level === 'easy' }" @click="level = 'easy'">简</button>
             <button :class="{ on: level === 'mid' }" @click="level = 'mid'">中</button>
+            <button :class="{ on: level === 'hard' }" @click="level = 'hard'">难</button>
           </template>
         </div>
 

@@ -65,6 +65,21 @@ export function sourceBlocks(riddle, pool, n = 6) {
   return seededShuffle([...froms, ...titleChars.slice(0, 2), ...extra], riddle.id + ':mid')
 }
 
+/** 难档的来源字块：整个谜面的字都是料（PLAN §3.2「只给谜面，全靠自己拆」），
+ *  缺口（from 只出现在解析里的，如 雪→雨）补进来，不许无解。 */
+export function hardBlocks(riddle, pool, n = 8) {
+  const ops = opsOf(riddle.structure)
+  const froms = [...new Set(ops.map((o) => String(o.from)))]
+  const titleChars = [...new Set(String(riddle.title || '').split(''))]
+    .filter((c) => /\p{Script=Han}/u.test(c))
+  const missing = froms.filter((c) => !titleChars.includes(c))
+  const extra = seededShuffle(
+    pool.filter((c) => !froms.includes(c) && !titleChars.includes(c)),
+    riddle.id + ':hard',
+  ).slice(0, Math.max(0, n - titleChars.length - missing.length))
+  return seededShuffle([...titleChars, ...missing, ...extra], riddle.id + ':hard')
+}
+
 /** 简档的件块：真部件 + 干扰件。 */
 export function partBlocks(riddle, pool, n = 10) {
   const parts = [...new Set(opsOf(riddle.structure).map((o) => String(o.part)))]

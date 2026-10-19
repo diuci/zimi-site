@@ -1,17 +1,17 @@
 <script setup>
-// 解字台（PLAN-猜谜站 §3.2）——这个站的招牌玩法。
+// 解字台（PLAN-猜谜站 §3.2/§3.3）——这个站的招牌玩法。
 //
 // 简：件块备好（真件 + 干扰件），挑对的放上台。
 // 中：原字块 + 工具栏（全取/取左半/取右半/取部件/会意），自己配对工序；
-//     配不上声明的 (字, 操作) 就是拆不出——猜料配工序本身就是玩法。
+// 难：整个谜面的字都是料，工具栏加 减笔/加笔。
+// 配不上声明的 (字, 操作) 就是拆不出——猜料配工序本身就是玩法。
 // 合成键只在台上的件与声明的部件恰好齐了才亮（多重集合一致）。
-// 减笔/加笔（「难」档）是步骤 6 的事，这里不出现。
 import { ref, computed, watch } from 'vue'
-import { tryOp, isSolved, sourceBlocks, partBlocks, opsOf } from '../logic/strip.mjs'
+import { tryOp, isSolved, sourceBlocks, partBlocks, hardBlocks, opsOf } from '../logic/strip.mjs'
 
 const props = defineProps({
   riddle: { type: Object, required: true }, // 带 structure 的谜目
-  level: { type: String, required: true }, // 'easy' | 'mid'
+  level: { type: String, required: true }, // 'easy' | 'mid' | 'hard'
   charPool: { type: Array, required: true },
 })
 const emit = defineEmits(['solved'])
@@ -22,7 +22,11 @@ const OPS = [
   { id: 'half_r', label: '取右半' },
   { id: 'part', label: '取部件' },
   { id: 'free', label: '会意' },
+  { id: 'minus', label: '减笔', hard: true },
+  { id: 'plus', label: '加笔', hard: true },
 ]
+// 工具栏按档位出牌：简/中五道，难档加减笔/加笔（PLAN §3.3）
+const toolbar = computed(() => OPS.filter((o) => !o.hard || props.level === 'hard'))
 
 const used = ref([]) // 已消耗的 structure.ops 下标
 const placed = ref([]) // 台上的件
@@ -31,9 +35,11 @@ const selOp = ref('') // 选中的操作
 const shake = ref(false) // 拆不出的反馈
 const missNote = ref('') // 拆不出的文字反馈（只晃动不够，孩子要知道为什么没反应）
 
-const blocks = computed(() => props.level === 'easy'
-  ? partBlocks(props.riddle, props.charPool)
-  : sourceBlocks(props.riddle, props.charPool))
+const blocks = computed(() => {
+  if (props.level === 'easy') return partBlocks(props.riddle, props.charPool)
+  if (props.level === 'hard') return hardBlocks(props.riddle, props.charPool)
+  return sourceBlocks(props.riddle, props.charPool)
+})
 
 const solved = computed(() => isSolved(placed.value, props.riddle.structure))
 
@@ -112,9 +118,9 @@ function undoAll() {
       >{{ c }}</button>
     </div>
 
-    <div v-if="level === 'mid'" class="toolbar" role="group" aria-label="拆解工序">
+    <div v-if="level === 'mid' || level === 'hard'" class="toolbar" role="group" aria-label="拆解工序">
       <button
-        v-for="o in OPS"
+        v-for="o in toolbar"
         :key="o.id"
         class="op"
         :class="{ on: selOp === o.id }"

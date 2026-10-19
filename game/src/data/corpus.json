@@ -1,6 +1,6 @@
 {
   "contentVersion": 1,
-  "sourceSha256": "c011e7b28554140b63e869ac2680cca8cdf5c8036416c8448f80a2a747a0a505",
+  "sourceSha256": "374d7777ccc4288f14ecb0a9e75d0c7a500eab21910e49edd2438bba92cac6c6",
   "count": 98,
   "types": {
     "会意": 15,
@@ -416,7 +416,21 @@
       "type": "增损",
       "subtype": "叠字",
       "difficulty": 1,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "木",
+            "from": "木",
+            "op": "full"
+          },
+          {
+            "part": "木",
+            "from": "木",
+            "op": "full"
+          }
+        ],
+        "result": "林"
+      },
       "tags": [
         "增损",
         "叠字",
@@ -434,7 +448,21 @@
       "type": "增损",
       "subtype": "左右",
       "difficulty": 1,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "女",
+            "from": "女",
+            "op": "full"
+          },
+          {
+            "part": "子",
+            "from": "子",
+            "op": "full"
+          }
+        ],
+        "result": "好"
+      },
       "tags": [
         "增损",
         "左右",
@@ -470,7 +498,26 @@
       "type": "增损",
       "subtype": "叠字",
       "difficulty": 1,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "众"
+      },
       "tags": [
         "增损",
         "叠字",
@@ -557,7 +604,21 @@
       "type": "增损",
       "subtype": "增减",
       "difficulty": 1,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "上",
+            "from": "上",
+            "op": "full"
+          },
+          {
+            "part": "下",
+            "from": "下",
+            "op": "full"
+          }
+        ],
+        "result": "卡"
+      },
       "tags": [
         "增损",
         "方位"
@@ -574,7 +635,16 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 1,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "月",
+            "from": "有",
+            "op": "minus"
+          }
+        ],
+        "result": "月"
+      },
       "tags": [
         "增损",
         "减损"
@@ -591,7 +661,21 @@
       "type": "增损",
       "subtype": "上下",
       "difficulty": 1,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "自",
+            "from": "自",
+            "op": "full"
+          },
+          {
+            "part": "小",
+            "from": "小",
+            "op": "full"
+          }
+        ],
+        "result": "省"
+      },
       "tags": [
         "增损",
         "上下"
@@ -608,7 +692,21 @@
       "type": "增损",
       "subtype": "上下",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "包",
+            "from": "包",
+            "op": "full"
+          },
+          {
+            "part": "雨",
+            "from": "雪",
+            "op": "part"
+          }
+        ],
+        "result": "雹"
+      },
       "tags": [
         "增损",
         "上下"
@@ -625,7 +723,21 @@
       "type": "增损",
       "subtype": "左右",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "亻",
+            "from": "此",
+            "op": "free"
+          },
+          {
+            "part": "士",
+            "from": "士",
+            "op": "free"
+          }
+        ],
+        "result": "仕"
+      },
       "tags": [
         "增损",
         "左右",
@@ -660,7 +772,16 @@
       "type": "增损",
       "subtype": "减半",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "夕",
+            "from": "多",
+            "op": "minus"
+          }
+        ],
+        "result": "夕"
+      },
       "tags": [
         "减半",
         "叠字"
@@ -677,7 +798,21 @@
       "type": "增损",
       "subtype": "左右",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "又",
+            "from": "又",
+            "op": "full"
+          },
+          {
+            "part": "见",
+            "from": "见",
+            "op": "full"
+          }
+        ],
+        "result": "观"
+      },
       "tags": [
         "增损",
         "左右"
@@ -781,7 +916,26 @@
       "type": "增损",
       "subtype": "增减",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "八",
+            "from": "八",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          }
+        ],
+        "result": "杏"
+      },
       "tags": [
         "增损",
         "数字"
@@ -866,7 +1020,16 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "九",
+            "from": "旭",
+            "op": "minus"
+          }
+        ],
+        "result": "九"
+      },
       "tags": [
         "增损",
         "减损"
@@ -900,7 +1063,21 @@
       "type": "增损",
       "subtype": "增减",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "衣",
+            "from": "衣",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "洞",
+            "op": "free"
+          }
+        ],
+        "result": "哀"
+      },
       "tags": [
         "增损",
         "增减"
@@ -969,7 +1146,16 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "鸟",
+            "from": "鸡",
+            "op": "minus"
+          }
+        ],
+        "result": "鸟"
+      },
       "tags": [
         "增损",
         "减损"
@@ -986,7 +1172,21 @@
       "type": "增损",
       "subtype": "上下",
       "difficulty": 2,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "门",
+            "from": "门",
+            "op": "full"
+          },
+          {
+            "part": "心",
+            "from": "心",
+            "op": "full"
+          }
+        ],
+        "result": "闷"
+      },
       "tags": [
         "增损",
         "上下",
@@ -1028,7 +1228,7 @@
       ],
       "source": "S1+S3",
       "license": "public-domain",
-      "jie": "「春」字的上半是「禾」，「秋」字的左半也是「禾」。\n各取一半，两个「禾」合成「香」字。属各半合成法。"
+      "jie": "「秋」字的左半是「禾」，「春」字的下半是「日」。\n各取一半，「禾」与「日」相合，即为「香」字。属各半合成法。"
     },
     {
       "id": "chengchi-ban-canpo",
@@ -1141,7 +1341,21 @@
       "type": "增损",
       "subtype": "左右",
       "difficulty": 3,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "氵",
+            "from": "水",
+            "op": "free"
+          },
+          {
+            "part": "哥",
+            "from": "歌",
+            "op": "part"
+          }
+        ],
+        "result": "河"
+      },
       "tags": [
         "增损",
         "左右"
@@ -1158,14 +1372,23 @@
       "type": "增损",
       "subtype": "减损",
       "difficulty": 3,
-      "structure": null,
+      "structure": {
+        "ops": [
+          {
+            "part": "非",
+            "from": "罪",
+            "op": "minus"
+          }
+        ],
+        "result": "非"
+      },
       "tags": [
         "增损",
         "减损"
       ],
       "source": "S3",
       "license": "public-domain",
-      "jie": "「罪」字斩去首（宀），余下半部即「非」。「罪该斩首」以减损法扣「非」。属增损法。"
+      "jie": "「罪」字上「罒」下「非」，斩去首（罒），余下半部即「非」。「罪该斩首」以减损法扣「非」。属增损法。"
     },
     {
       "id": "chunyumianmian-qidu-su",
