@@ -13,7 +13,7 @@ import TypingPad from './TypingPad.vue'
 import StripBoard from './StripBoard.vue'
 import corpus from '../data/corpus.json'
 import { puzzleFor, dayKey, parseDayKey } from '../logic/daily.mjs'
-import { scoreAnswer, nextCombo } from '../logic/scoring.mjs'
+import { scoreAnswer, nextCombo, achievements } from '../logic/scoring.mjs'
 
 const props = defineProps({
   mode: { type: String, required: true }, // 'daily' | 'practice'
@@ -48,7 +48,10 @@ const hintUsed = ref(false)
 const fails = ref(0)
 const lastPts = ref(0)
 const note = ref('')
-const practice = ref(loadJSON(PKEY, { score: 0, combo: 0, best: 0, right: 0, wrong: 0 }))
+const practice = ref(loadJSON(PKEY, { score: 0, combo: 0, best: 0, right: 0, wrong: 0, solved: [], noHint: [] }))
+// 旧版存档没有 solved/noHint 两个数组：载入后补默认值，成就口径才不会读出 undefined
+if (!Array.isArray(practice.value.solved)) practice.value.solved = []
+if (!Array.isArray(practice.value.noHint)) practice.value.noHint = []
 const dailyLog = ref(loadJSON(DKEY, {}))
 const filterType = ref('全部')
 const filterDiff = ref(0) // 0 = 全部难度
@@ -64,6 +67,12 @@ const effDiff = computed(() => {
 })
 
 const TYPES = ['全部', ...Object.keys(corpus.types || {})]
+
+const achs = computed(() => achievements({
+  practice: practice.value,
+  forgeCount: (loadJSON('dc-zimi-forge', []) || []).length,
+  corpus,
+}))
 
 function pickPractice() {
   const pool = corpus.riddles.filter((r) =>
@@ -144,12 +153,19 @@ function settle(ok) {
     if (props.mode === 'practice') {
       const pts = scoreAnswer({ ok: true, difficulty: effDiff.value, combo: practice.value.combo, hint: hintUsed.value })
       lastPts.value = pts
+      const solved = practice.value.solved.includes(riddle.value.id)
+        ? practice.value.solved : [...practice.value.solved, riddle.value.id]
+      // 无提示解出才进 noHint（成就「不用拐杖」的数据源）
+      const noHint = (!hintUsed.value && !practice.value.noHint.includes(riddle.value.id))
+        ? [...practice.value.noHint, riddle.value.id] : practice.value.noHint
       practice.value = {
         ...practice.value,
         score: practice.value.score + pts,
         combo: nextCombo(practice.value.combo, true),
         best: Math.max(practice.value.best, nextCombo(practice.value.combo, true)),
         right: practice.value.right + 1,
+        solved,
+        noHint,
       }
       saveJSON(PKEY, practice.value)
     } else {
@@ -220,6 +236,15 @@ onMounted(() => {
       <div class="hud">
         得分 {{ practice.score }} · 连击 {{ practice.combo }} · 最佳连击 {{ practice.best }}
         · 对 {{ practice.right }} / 错 {{ practice.wrong }}
+      </div>
+      <div class="ach" aria-label="成就">
+        <span
+          v-for="a in achs"
+          :key="a.id"
+          class="achchip"
+          :class="{ done: a.done }"
+          :title="a.note"
+        >{{ a.done ? '✓ ' : '' }}{{ a.name }} {{ a.progress }}/{{ a.goal }}</span>
       </div>
     </div>
 
@@ -314,6 +339,12 @@ onMounted(() => {
 .chips button.on { background: var(--c-primary); border-color: var(--c-primary); color: var(--paper); }
 .chips button:not(.on):hover { border-color: var(--c-primary); color: var(--c-primary); }
 .hud { font-size: 13px; color: var(--ink-faint); }
+.ach { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.achchip {
+  padding: 2px 9px; border: 1px solid var(--line); border-radius: 999px;
+  color: var(--ink-faint); font-size: 11.5px;
+}
+.achchip.done { border-color: var(--c-ok); color: var(--c-ok); }
 
 .meta {
   display: flex; gap: 12px; align-items: baseline;

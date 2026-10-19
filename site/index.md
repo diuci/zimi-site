@@ -1,27 +1,27 @@
 ---
 layout: home
 hero:
-  name: 猜字谜
-  text: 分门别类的开源字谜
-  tagline: 谜面 · 谜底 · 解析，按谜种 / 难度 / 标签浏览，可搜索可打印，繁简可切
+  name: 猜谜
+  text: 拆一个字，懂一个字
+  tagline: 每日一谜 · 自由练习 · 字谜工坊。98 道古典字谜谜面谜底解析齐备，可浏览可搜索可打印，繁简可切。
   actions:
     - theme: brand
-      text: 浏览全部字谜
-      link: /riddles/索引
+      text: 马上玩
+      link: /play/
     - theme: alt
-      text: 数据来源与版权
-      link: /sources
+      text: 浏览谜库
+      link: /riddles/索引
 features:
-  - icon: 🀄
-    title: 分门别类
-    details: 按谜种（拆字 / 会意 / 谐音 / 增损 / 离合 / 典故 / 象形 / 方位 / 数字 / 当代）组织，再按难度与标签交叉索引。
-  - icon: ✅
-    title: 质量优先
-    details: 唯一谜底、解析完备、来源可溯、无近似重复——任何一条不满足，内容仓构建失败。
-  - icon: 🔓
-    title: 公版安全
-    details: 古典公版逐篇核验；我方原创当代谜 CC BY 4.0。侵权联系 hi@diuci.com。
+  - icon: 🗓
+    title: 每日一谜
+    details: 同一天全网同一道谜，猜完看拆解。已发出的日子逐日冻结，随时回放。
+  - icon: 🧩
+    title: 解字台
+    details: 把谜面的字拆出部件、亲手拼出谜底。简、中、难三档，从挑件到自己配工序。
+  - icon: �
+    title: 字谜工坊
+    details: 挑一个字亲手拼出来，写上你的谜面，生成挑战链接发给朋友。
   - icon: 📄
-    title: 单一事实源
-    details: 内容来自 diuci/chinese-character-riddle，本仓只存呈现层，CI 检出后生成页面。
+    title: 谜库与打印
+    details: 谜面 / 谜底 / 解析按谜种与难度交叉索引，繁简可切，A4 打印版给家长和老师。
 ---

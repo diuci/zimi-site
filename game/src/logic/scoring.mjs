@@ -26,3 +26,36 @@ export function nextCombo(combo, ok) {
 export function unlockGoal(typeCount) {
   return Math.max(1, Math.ceil(typeCount * 0.8))
 }
+
+/** 成就清单（PLAN §4.5，口径都钉在数据上，不靠感觉）：
+ *  - 每谜种一条「XX 通关」：答对该谜种不同谜目 ≥ 通关线（刷同一题不算）
+ *  - 不用拐杖：任一谜种无提示达到通关线
+ *  - 小作者：字谜工坊出 10 道自己的谜
+ *  - 百发百中：连续答对 10 题（历史最佳连击） */
+export function achievements({ practice = {}, forgeCount = 0, corpus }) {
+  const solved = new Set(practice.solved || [])
+  const noHint = new Set(practice.noHint || [])
+  const byType = {}
+  const noHintByType = {}
+  for (const r of corpus.riddles || []) {
+    if (solved.has(r.id)) byType[r.type] = (byType[r.type] || 0) + 1
+    if (noHint.has(r.id)) noHintByType[r.type] = (noHintByType[r.type] || 0) + 1
+  }
+  const out = []
+  for (const [t, total] of Object.entries(corpus.types || {})) {
+    const goal = unlockGoal(total)
+    const got = byType[t] || 0
+    out.push({ id: 'type:' + t, name: t + '通关', done: got >= goal,
+      progress: Math.min(got, goal), goal, note: '答对 ' + goal + ' 道不同的' + t + '谜' })
+  }
+  const noHintDone = Object.entries(corpus.types || {})
+    .some(([t, total]) => (noHintByType[t] || 0) >= unlockGoal(total))
+  out.push({ id: 'nohint', name: '不用拐杖', done: noHintDone,
+    progress: noHintDone ? 1 : 0, goal: 1, note: '任一谜种不用提示达到通关线' })
+  out.push({ id: 'author', name: '小作者', done: forgeCount >= 10,
+    progress: Math.min(forgeCount, 10), goal: 10, note: '在字谜工坊出 10 道自己的谜' })
+  const best = practice.best || 0
+  out.push({ id: 'combo10', name: '百发百中', done: best >= 10,
+    progress: Math.min(best, 10), goal: 10, note: '连续答对 10 题' })
+  return out
+}

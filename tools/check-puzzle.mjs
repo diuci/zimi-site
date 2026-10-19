@@ -11,7 +11,7 @@ import { readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { puzzleFor, dayKey, presentTypes } from '../game/src/logic/daily.mjs'
-import { scoreAnswer, nextCombo, unlockGoal } from '../game/src/logic/scoring.mjs'
+import { scoreAnswer, nextCombo, unlockGoal, achievements } from '../game/src/logic/scoring.mjs'
 import { tryOp, isSolved, sourceBlocks, partBlocks } from '../game/src/logic/strip.mjs'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
@@ -185,6 +185,31 @@ function selftest() {
     const sb = sourceBlocks(r, pool)
     return ['扌', '京'].every((c) => pb.includes(c)) && ['推', '就'].every((c) => sb.includes(c))
       ? true : '块面没盖住必需字符：' + JSON.stringify({ pb, sb })
+  })
+  // 成就判定（scoring.mjs achievements）
+  const achCorpus = { types: { 增损: 2, 离合: 1 },
+    riddles: [{ id: 'r1', type: '增损' }, { id: 'r2', type: '增损' }, { id: 'r3', type: '离合' }] }
+  add('成就：刷同一题不算通关（按不同谜目计）', () => {
+    const a = achievements({ practice: { solved: ['r1', 'r1', 'r1'] }, corpus: achCorpus })
+    const zeng = a.find((x) => x.id === 'type:增损')
+    return zeng && zeng.progress === 1 && !zeng.done ? true : '重复谜目被计入：' + JSON.stringify(zeng)
+  })
+  add('成就：离合 1 篇即通关（80% 线向上取整）', () => {
+    const a = achievements({ practice: { solved: ['r3'] }, corpus: achCorpus })
+    const li = a.find((x) => x.id === 'type:离合')
+    return li && li.done && li.goal === 1 ? true : '离合通关线错误：' + JSON.stringify(li)
+  })
+  add('成就：不用拐杖要求无提示解出', () => {
+    const withHint = achievements({ practice: { solved: ['r1', 'r2'] }, corpus: achCorpus })
+    const noHint = achievements({ practice: { solved: ['r1', 'r2'], noHint: ['r1', 'r2'] }, corpus: achCorpus })
+    const h = withHint.find((x) => x.id === 'nohint')
+    const n = noHint.find((x) => x.id === 'nohint')
+    return !h.done && n.done ? true : '提示使用没有影响「不用拐杖」'
+  })
+  add('成就：小作者按工坊谜数、百发百中按最佳连击', () => {
+    const a = achievements({ practice: { best: 10 }, forgeCount: 10, corpus: achCorpus })
+    return a.find((x) => x.id === 'author').done && a.find((x) => x.id === 'combo10').done
+      ? true : '小作者/百发百中判定错误'
   })
   console.log('[ok] check-puzzle --selftest 通过（' + cases.length + ' 项：' + cases.join('、') + '）')
   return process.exitCode || 0
