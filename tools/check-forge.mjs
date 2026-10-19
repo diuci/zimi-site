@@ -63,6 +63,9 @@ function selftest() {
   add('谜面：太短/太长/泄底都不合法', () =>
     !validClue('卡', '卡') && !validClue('一', '卡') && !validClue('a'.repeat(31), '卡')
     && validClue('一上一下', '卡') ? true : 'validClue 口径错误')
+  add('谜面：极常用字答案豁免泄底（一/十/口），非常用字照拦', () =>
+    validClue('试一道增损谜', '一') && validClue('谜面里有一字', '一')
+    && !validClue('谜底就是鲜', '鲜') ? true : '白名单豁免口径错误')
   add('编码往返：中文谜面与部件无损', () => {
     const ch = { answer: '鲜', clue: '一边鱼一边羊', ops: [{ part: '鱼', from: '鱼', op: 'full' }, { part: '羊', from: '羊', op: 'full' }], author: '小作者' }
     const back = decodeChallenge(encodeChallenge(ch))
