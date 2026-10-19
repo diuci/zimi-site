@@ -95,6 +95,14 @@ jobs:
         if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-puzzle.mjs
 
+      - name: 工坊闸门自检
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
+        run: node tools/check-forge.mjs --selftest
+
+      - name: 工坊闸门（字库可解 + 挑战编码往返）
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
+        run: node tools/check-forge.mjs
+
       - name: UI 闸门自检
         if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-ui.mjs --selftest

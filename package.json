@@ -14,7 +14,8 @@
     "sync:corpus": "node tools/sync-corpus.mjs",
     "check:corpus": "node tools/sync-corpus.mjs --check",
     "check:puzzle": "node tools/check-puzzle.mjs",
-    "verify": "node tools/sync-corpus.mjs --selftest && node tools/check-puzzle.mjs --selftest && npm run build && npm run check:corpus && npm run check:puzzle && node tools/check-legal.mjs && node tools/check-pages.py && node tools/check-typography.mjs && node tools/check-ui.mjs"
+    "check:forge": "node tools/check-forge.mjs",
+    "verify": "node tools/sync-corpus.mjs --selftest && node tools/check-puzzle.mjs --selftest && node tools/check-forge.mjs --selftest && npm run build && npm run check:corpus && npm run check:puzzle && npm run check:forge && node tools/check-legal.mjs && node tools/check-pages.py && node tools/check-typography.mjs && node tools/check-ui.mjs"
   },
   "dependencies": {
     "vue": "^3.5.13"

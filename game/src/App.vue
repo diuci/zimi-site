@@ -1,12 +1,13 @@
 <script setup>
 // 猜谜 · 游戏主容器。
-//   每日一谜 / 自由练习 —— 步骤 3+4 已接入（PlayView：每日冻结、打字判分、大键盘）
-//   字谜工坊 —— 步骤 8，依赖 structure 拆解数据（首批 18 篇已入库），仍是占位
-// 占位文案对访问者如实说明状态，不假装可玩。
-import { ref } from 'vue'
+//   每日一谜 / 自由练习 —— 已上线（每日冻结、打字判分、大键盘）
+//   字谜工坊 —— 已上线（选拆解字 → 解字台拼装 → 写谜面 → 谜册/挑战链接）
+// 挑战链接（?forge=…）打开时自动切到工坊页。
+import { ref, onMounted } from 'vue'
 import TopNav from './components/TopNav.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import PlayView from './components/PlayView.vue'
+import ForgeView from './components/ForgeView.vue'
 
 const tab = ref('daily')
 
@@ -15,6 +16,10 @@ const TABS = [
   { id: 'practice', label: '自由练习' },
   { id: 'forge', label: '字谜工坊' },
 ]
+
+onMounted(() => {
+  if (new URLSearchParams(location.search).get('forge')) tab.value = 'forge'
+})
 </script>
 
 <template>
@@ -36,11 +41,7 @@ const TABS = [
 
     <main>
       <PlayView v-if="tab !== 'forge'" :key="tab" :mode="tab" />
-      <section v-else class="card">
-        <h2>字谜工坊</h2>
-        <p>自己出谜给别人猜：挑一个字，选拆法，工坊帮你写出谜面。会拆字的孩子，也能成为出题人。</p>
-        <span class="soon">开发中，即将上线</span>
-      </section>
+      <ForgeView v-else />
     </main>
   </div>
   <SiteFooter />
