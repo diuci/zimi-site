@@ -1,6 +1,6 @@
 {
   "contentVersion": 1,
-  "sourceSha256": "2de05bea202b4a80d5081bd9b81caa1b33a001bd33bfbe89ce2c8bc6c41598e0",
+  "sourceSha256": "c011e7b28554140b63e869ac2680cca8cdf5c8036416c8448f80a2a747a0a505",
   "count": 98,
   "types": {
     "会意": 15,
@@ -1990,7 +1990,7 @@
   "history": {
     "since": "2026-10-19",
     "through": "2026-10-19",
-    "added": 1,
+    "added": 0,
     "days": [
       {
         "day": "2026-10-19",

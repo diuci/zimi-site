@@ -35,15 +35,19 @@ function readSource() {
   try { raw = readFileSync(SOURCE) } catch {
     throw new Error('读不到内容仓数据：' + SOURCE + '（设 CONTENT_ROOT 指向内容仓）')
   }
-  const data = JSON.parse(raw.toString('utf8'))
+  // 换行归一化：Windows 工作区是 CRLF，CI 检出是 LF，同一份内容两种字节。
+  // 指纹只认内容（LF），否则快照在一台机器上自洽、到 CI 必漂移（首次 CI 实跑踩过）。
+  const norm = raw.toString('utf8').replace(/\r\n/g, '\n')
+  const data = JSON.parse(norm)
   if (!Array.isArray(data.riddles)) throw new Error('内容仓数据里没有 riddles 数组')
-  return { data, sha256: createHash('sha256').update(raw).digest('hex') }
+  return { data, sha256: createHash('sha256').update(norm, 'utf8').digest('hex') }
 }
 
-/** 从 md 正文提取「## 解析」段（与 build-traditional 的取法一致：到下一个 ## 或文末）。 */
+/** 从 md 正文提取「## 解析」段（与 build-traditional 的取法一致：到下一个 ## 或文末）。
+ *  换行归一成 LF：Windows 工作区 CRLF 与 CI 检出 LF 必须得到同一份 jie。 */
 export function extractJie(text) {
   const m = /##\s*解析\s*\n(.*?)(?=\n## |\s*$)/s.exec(text)
-  return m ? m[1].trim() : ''
+  return m ? m[1].trim().replace(/\r\n/g, '\n') : ''
 }
 
 /** 读一个谜 md，返回 {jie}。 */
@@ -173,6 +177,10 @@ function selftest() {
   add('解析提取：截到下一个 ## 为止', () => {
     const j = extractJie('## 解析\n第一行\n第二行\n## 出处\n来源')
     return j === '第一行\n第二行' ? true : '解析提取错误：' + JSON.stringify(j)
+  })
+  add('解析提取：CRLF 归一成 LF', () => {
+    const j = extractJie('## 解析\r\n第一行\r\n第二行\r\n## 出处\r\n来源')
+    return j === '第一行\n第二行' ? true : 'CRLF 没归一：' + JSON.stringify(j)
   })
   add('解析提取：没有解析段给空串', () => extractJie('## 出处\n来源') === '' ? true : '应给空串')
   add('冻结之后内容仓删谜进 ghosts', () => {
