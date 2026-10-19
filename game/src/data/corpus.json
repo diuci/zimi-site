@@ -16,494 +16,6 @@
   },
   "riddles": [
     {
-      "id": "rifu-yiri",
-      "title": "日复一日",
-      "answer": "昌",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "上下",
-      "difficulty": 1,
-      "structure": {
-        "ops": [
-          {
-            "part": "日",
-            "from": "日",
-            "op": "full"
-          },
-          {
-            "part": "日",
-            "from": "日",
-            "op": "full"
-          }
-        ],
-        "result": "昌"
-      },
-      "tags": [
-        "拆字",
-        "时间"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "「昌」字上「日」下「日」，正是两个「日」相叠。「日复一日」即一日又一日，\n上下两「日」合成「昌」。属拆字法。"
-    },
-    {
-      "id": "shangshan-haishui",
-      "title": "山上还有水",
-      "answer": "汕",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "左右",
-      "difficulty": 1,
-      "structure": {
-        "ops": [
-          {
-            "part": "山",
-            "from": "山",
-            "op": "full"
-          },
-          {
-            "part": "水",
-            "from": "水",
-            "op": "full"
-          }
-        ],
-        "result": "汕"
-      },
-      "tags": [
-        "拆字",
-        "自然"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "「汕」字左「山」右「水」。谜面「山上还有水」，即在「山」旁再添「水」，\n左右相合得「汕」。属拆字法。"
-    },
-    {
-      "id": "shikou-zhangkou",
-      "title": "十张口",
-      "answer": "田",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "拼合",
-      "difficulty": 1,
-      "structure": {
-        "ops": [
-          {
-            "part": "十",
-            "from": "十",
-            "op": "full"
-          },
-          {
-            "part": "口",
-            "from": "口",
-            "op": "full"
-          }
-        ],
-        "result": "田"
-      },
-      "tags": [
-        "拆字",
-        "拼合"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「十」与「口」相合，即为「田」字。\n属拆字拼合：把两个部件重新组合成字。"
-    },
-    {
-      "id": "yibian-yu-yibian-yang",
-      "title": "一边是鱼，一边是羊，两边不一样",
-      "answer": "鲜",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "左右",
-      "difficulty": 1,
-      "structure": {
-        "ops": [
-          {
-            "part": "鱼",
-            "from": "鱼",
-            "op": "full"
-          },
-          {
-            "part": "羊",
-            "from": "羊",
-            "op": "full"
-          }
-        ],
-        "result": "鲜"
-      },
-      "tags": [
-        "拆字",
-        "动物"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "「鲜」字左「鱼」右「羊」，左右两半截然不同，故「两边不一样」。\n鱼与羊皆为鲜美之味，合为「鲜」字。属拆字法。"
-    },
-    {
-      "id": "ren-zai-cao-mu-zhong",
-      "title": "人在草木中",
-      "answer": "茶",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "拼合",
-      "difficulty": 2,
-      "structure": {
-        "ops": [
-          {
-            "part": "艹",
-            "from": "草",
-            "op": "part"
-          },
-          {
-            "part": "人",
-            "from": "人",
-            "op": "full"
-          },
-          {
-            "part": "木",
-            "from": "木",
-            "op": "full"
-          }
-        ],
-        "result": "茶"
-      },
-      "tags": [
-        "拆字",
-        "拼合"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「草」字头是「艹」，「木」在下，「人」夹在中间，\n「艹」+「人」+「木」合为「茶」字。属拆字拼合：部件按位置重组。"
-    },
-    {
-      "id": "shikou-xinsi",
-      "title": "十口心思",
-      "answer": "思",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "拼合",
-      "difficulty": 2,
-      "structure": {
-        "ops": [
-          {
-            "part": "十",
-            "from": "十",
-            "op": "full"
-          },
-          {
-            "part": "口",
-            "from": "口",
-            "op": "full"
-          },
-          {
-            "part": "心",
-            "from": "心",
-            "op": "full"
-          }
-        ],
-        "result": "思"
-      },
-      "tags": [
-        "拆字",
-        "拼合"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「十」与「口」相合为「田」，「田」下加「心」，即为「思」字。\n属拆字拼合：把若干部件重新组合成字。"
-    },
-    {
-      "id": "yibian-lv-yibian-hong",
-      "title": "一边绿，一边红，一边吃水，一边生火",
-      "answer": "秋",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "左右",
-      "difficulty": 2,
-      "structure": {
-        "ops": [
-          {
-            "part": "禾",
-            "from": "绿",
-            "op": "free"
-          },
-          {
-            "part": "火",
-            "from": "红",
-            "op": "free"
-          }
-        ],
-        "result": "秋"
-      },
-      "tags": [
-        "拆字",
-        "颜色",
-        "自然"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "「秋」字左「禾」右「火」。「禾」是庄稼草木，颜色是绿；「火」的颜色是红。\n庄稼禾苗靠水灌溉（吃水），火苗则能生火。左右两半各对一句，合起来正是「秋」。属拆字法。"
-    },
-    {
-      "id": "yiren-yizhang-kou",
-      "title": "一人一张口，口下长只手",
-      "answer": "拿",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "上下",
-      "difficulty": 2,
-      "structure": {
-        "ops": [
-          {
-            "part": "人",
-            "from": "人",
-            "op": "full"
-          },
-          {
-            "part": "一",
-            "from": "一",
-            "op": "full"
-          },
-          {
-            "part": "口",
-            "from": "口",
-            "op": "full"
-          },
-          {
-            "part": "手",
-            "from": "手",
-            "op": "free"
-          }
-        ],
-        "result": "拿"
-      },
-      "tags": [
-        "拆字",
-        "人体"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "「拿」字上「合」下「手」。「合」由「人」「一」「口」合成，正是「一人一张口」。\n其下再长出一「手」，即「口下长只手」。上下相合得「拿」。属拆字法。"
-    },
-    {
-      "id": "banged-bandu",
-      "title": "半耕半读",
-      "answer": "讲",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "各半",
-      "difficulty": 3,
-      "structure": {
-        "ops": [
-          {
-            "part": "讠",
-            "from": "读",
-            "op": "half"
-          },
-          {
-            "part": "井",
-            "from": "耕",
-            "op": "half_r"
-          }
-        ],
-        "result": "讲"
-      },
-      "tags": [
-        "拆字",
-        "各半"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「耕」字的右半是「井」，「读」字的左半是「言字旁（讠）」。\n各取一半，「讠」与「井」相合，即为「讲」字。属拆字各半法。"
-    },
-    {
-      "id": "banqing-banzi",
-      "title": "半青半紫",
-      "answer": "素",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "各半",
-      "difficulty": 3,
-      "structure": null,
-      "tags": [
-        "拆字",
-        "各半"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「青」字的上半是「龶」（青字头），「紫」字的下半是「糸」。\n各取一半，「龶」与「糸」相合，即为「素」字。属拆字各半法。"
-    },
-    {
-      "id": "chunxiang-lianye-tinqinsheng",
-      "title": "春香连夜听琴声",
-      "answer": "秦",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "上下",
-      "difficulty": 3,
-      "structure": {
-        "ops": [
-          {
-            "part": "三",
-            "from": "春",
-            "op": "part"
-          },
-          {
-            "part": "人",
-            "from": "春",
-            "op": "part"
-          },
-          {
-            "part": "禾",
-            "from": "香",
-            "op": "part"
-          }
-        ],
-        "result": "秦"
-      },
-      "tags": [
-        "拆字",
-        "上下"
-      ],
-      "source": "S3",
-      "license": "public-domain",
-      "jie": "「春」字上部「三人」（三+人）取「三」与「人」，「香」字下部取「禾」。合「三」「人」「禾」得「秦」。「秦」字正由「春」之上与「香」之下拼成。属拆字法。"
-    },
-    {
-      "id": "qianli-xiangfeng",
-      "title": "千里相逢",
-      "answer": "重",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "拼合",
-      "difficulty": 3,
-      "structure": {
-        "ops": [
-          {
-            "part": "千",
-            "from": "千",
-            "op": "full"
-          },
-          {
-            "part": "里",
-            "from": "里",
-            "op": "full"
-          }
-        ],
-        "result": "重"
-      },
-      "tags": [
-        "拆字",
-        "拼合"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「千」与「里」相逢相合，即为「重」字。\n重 = 千 + 里，是典型的拆字拼合：把两个部件重新组合成字。"
-    },
-    {
-      "id": "yikou-yao-niuban",
-      "title": "一口咬掉牛半截",
-      "answer": "告",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "咬损",
-      "difficulty": 3,
-      "structure": null,
-      "tags": [
-        "拆字",
-        "咬损"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「一口」是「口」字。「咬掉牛半截」即把「牛」字的下半截咬去，\n剩下「牛」的上半（形如「告」的上部）。\n口在下、牛之半在上，合成「告」字。属拆字咬损法。"
-    },
-    {
-      "id": "yiren-zainei",
-      "title": "一人在内",
-      "answer": "肉",
-      "answer_len": 1,
-      "type": "拆字",
-      "subtype": "嵌人",
-      "difficulty": 3,
-      "structure": null,
-      "tags": [
-        "拆字",
-        "嵌人"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「肉」字是「人」嵌在「冂」框之内。\n「一人在内」即人字在框内，合为「肉」。属拆字嵌人法。\n（近形说明：「内」也是「人」在「冂」内，与「肉」仅一横之差。本谜按通行谜底取「肉」，\n此近形歧义如实注出，不隐藏；取「肉」的依据是「肉」为常用字、谜底指向更明确。）"
-    },
-    {
-      "id": "renyan-chengxin",
-      "title": "人言诚信为本",
-      "answer": "信",
-      "answer_len": 1,
-      "type": "当代",
-      "subtype": "拼合",
-      "difficulty": 1,
-      "structure": null,
-      "tags": [
-        "当代",
-        "拼合",
-        "品德"
-      ],
-      "source": "S4",
-      "license": "cc-by-4.0",
-      "jie": "「人」与「言」相合，即为「信」字。\n人言为信，是「信」字本义的回归：人说的话，要算数。"
-    },
-    {
-      "id": "simazhao-zhixin",
-      "title": "司马昭之心",
-      "answer": "腹",
-      "answer_len": 1,
-      "type": "典故",
-      "subtype": "成语",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "典故",
-        "成语",
-        "历史"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "成语「司马昭之心，路人皆知」：司马昭想取代魏室的心思，连路人都知道。\n「心」即肚腹里的念头，谜底取「腹」（肚子里的打算）。属典故意会法。"
-    },
-    {
-      "id": "sanguo-qimen",
-      "title": "三过其门",
-      "answer": "不",
-      "answer_len": 1,
-      "type": "典故",
-      "subtype": "史事",
-      "difficulty": 4,
-      "structure": null,
-      "tags": [
-        "典故",
-        "史事"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "典出大禹治水，「三过家门而不入」。\n谜面「三过其门」截去「而入」，关键在「不」入——以史事典故会意，\n取「不」字。属典故法：借历史典故取字。\n（中置信：谜面截断典故，取「不」为通行解，解析已注明典故出处。）"
-    },
-    {
-      "id": "shangxia-xianglian",
-      "title": "上下相连",
-      "answer": "卡",
-      "answer_len": 1,
-      "type": "方位",
-      "subtype": "叠字",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "方位",
-        "叠字"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「上」字在下、「下」字在上，两字相叠共用中间一横，即为「卡」字。\n卡 = 上 + 下，是典型的方位叠字谜。"
-    },
-    {
       "id": "xiaochuaner-tui-kai-bolang",
       "title": "小船儿推开波浪",
       "answer": "心",
@@ -862,353 +374,39 @@
       "jie": "「思援弓缴而射之」出自《孟子·告子上》（思援弓缴而射之，谓思引弓搭箭射天鹅）。引弓而射，矢不中的，正是「忒」——忒者，差失、未中也。以射失会「忒」字，属会意法。"
     },
     {
-      "id": "bantui-banjiu",
-      "title": "半推半就",
-      "answer": "掠",
+      "id": "simazhao-zhixin",
+      "title": "司马昭之心",
+      "answer": "腹",
       "answer_len": 1,
-      "type": "离合",
-      "subtype": "各半",
-      "difficulty": 3,
-      "structure": null,
-      "tags": [
-        "离合",
-        "各半"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「推」取左半，是提手旁「扌」；「就」取右半，是「京」。\n扌与京相合，即为「掠」字。属离合各半法：各取一字之半，离合相合。"
-    },
-    {
-      "id": "bashiba",
-      "title": "八十八",
-      "answer": "米",
-      "answer_len": 1,
-      "type": "数字",
-      "subtype": "数字",
-      "difficulty": 1,
-      "structure": null,
-      "tags": [
-        "数字",
-        "食物"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "「米」字可拆为两个「八」加中间一「十」（八、十、八）。谜面「八十八」即八、十、八相合，\n合成「米」。属数字拆字法。"
-    },
-    {
-      "id": "sansan-ri",
-      "title": "三个三日",
-      "answer": "晶",
-      "answer_len": 1,
-      "type": "数字",
-      "subtype": "叠字",
-      "difficulty": 1,
-      "structure": null,
-      "tags": [
-        "数字",
-        "叠字",
-        "自然"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "「晶」字由三个「日」组成。「三个三日」即三「日」相合，得「晶」。属数字法。"
-    },
-    {
-      "id": "shi'er-ge-yue",
-      "title": "十二个月",
-      "answer": "年",
-      "answer_len": 1,
-      "type": "数字",
-      "subtype": "纪年",
-      "difficulty": 1,
-      "structure": null,
-      "tags": [
-        "数字",
-        "时间"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "一年共有十二个月。「十二个月」即「年」。属数字会意法。"
-    },
-    {
-      "id": "jiushijiu",
-      "title": "九十九",
-      "answer": "百",
-      "answer_len": 1,
-      "type": "数字",
-      "subtype": "差一",
+      "type": "典故",
+      "subtype": "成语",
       "difficulty": 2,
       "structure": null,
       "tags": [
-        "数字",
-        "差一"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "九十九离「一百」只差一，即是「百」字少一笔「一」。\n以数推字，差一即是「百」。属数字会意法。"
-    },
-    {
-      "id": "qishier-xiaoshi",
-      "title": "七十二小时",
-      "answer": "晶",
-      "answer_len": 1,
-      "type": "数字",
-      "subtype": "三日",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "数字",
-        "三日"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "七十二小时即三天，也就是「三日」。\n三个「日」字相叠，即为「晶」字。属数字会意法。"
-    },
-    {
-      "id": "yibian-yiban",
-      "title": "一边一半",
-      "answer": "秋",
-      "answer_len": 1,
-      "type": "数字",
-      "subtype": "左右",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "数字",
-        "自然"
+        "典故",
+        "成语",
+        "历史"
       ],
       "source": "S1",
       "license": "public-domain",
-      "jie": "「秋」字左「禾」右「火」。「禾」与「火」各占一半，合为「秋」。「一边一半」即两半相合，得「秋」。属数字法。"
+      "jie": "成语「司马昭之心，路人皆知」：司马昭想取代魏室的心思，连路人都知道。\n「心」即肚腹里的念头，谜底取「腹」（肚子里的打算）。属典故意会法。"
     },
     {
-      "id": "riyue-hebi",
-      "title": "日月合璧",
-      "answer": "明",
+      "id": "sanguo-qimen",
+      "title": "三过其门",
+      "answer": "不",
       "answer_len": 1,
-      "type": "象形",
-      "subtype": "左右",
-      "difficulty": 1,
-      "structure": null,
-      "tags": [
-        "象形",
-        "自然"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "「明」字左「日」右「月」。「日月合璧」即「日」与「月」相合，得「明」。属象形法。"
-    },
-    {
-      "id": "taiyang-gua-zai-shushao",
-      "title": "太阳挂在树梢",
-      "answer": "杲",
-      "answer_len": 1,
-      "type": "象形",
-      "subtype": "上下",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "象形",
-        "自然"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "「杲」字上「日」下「木」。太阳（日）挂在树（木）的梢头，即「日」在「木」之上。\n象形会意得「杲」。属象形法。"
-    },
-    {
-      "id": "taiyang-luo-zai-shushao",
-      "title": "太阳落在树梢",
-      "answer": "杳",
-      "answer_len": 1,
-      "type": "象形",
-      "subtype": "上下",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "象形",
-        "自然"
-      ],
-      "source": "S1",
-      "license": "public-domain",
-      "jie": "「杳」字上「木」下「日」。太阳（日）落在树（木）的底下，即「日」在「木」之下。\n象形会意得「杳」。属象形法。"
-    },
-    {
-      "id": "yilun-wanyue",
-      "title": "一轮弯月",
-      "answer": "夕",
-      "answer_len": 1,
-      "type": "象形",
-      "subtype": "形似",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "象形",
-        "形似"
-      ],
-      "source": "S1+S3",
-      "license": "public-domain",
-      "jie": "「夕」字的笔画正是一弯如钩的形状，像一轮弯月挂在天上。\n属象形法：按字形象形取意。"
-    },
-    {
-      "id": "yidian-yiheng-chang",
-      "title": "一点一横长",
-      "answer": "府",
-      "answer_len": 1,
-      "type": "象形",
-      "subtype": "笔画",
+      "type": "典故",
+      "subtype": "史事",
       "difficulty": 4,
       "structure": null,
       "tags": [
-        "象形",
-        "笔画"
+        "典故",
+        "史事"
       ],
       "source": "S1+S3",
       "license": "public-domain",
-      "jie": "按笔顺逐笔描形：\n- 「一点一横长」——「广」字头的点、横；\n- 「一撇到南洋」——「广」的长撇，撇势深远如「到南洋」；\n- 「南洋有个人」——「亻」，即「人」字旁；\n- 「只有一寸长」——「寸」。\n\n广 + 亻 + 寸，合为「府」字。属笔画描形法，是流传最广的笔画谜之一。"
-    },
-    {
-      "id": "dajiao-chuan-xiaoxie",
-      "title": "大脚穿小鞋",
-      "answer": "难",
-      "answer_len": 1,
-      "type": "谐音",
-      "subtype": "歇后",
-      "difficulty": 1,
-      "structure": null,
-      "tags": [
-        "谐音",
-        "歇后",
-        "物品"
-      ],
-      "source": "S1+S2",
-      "license": "public-domain",
-      "jie": "歇后语「大脚穿小鞋——难（难）」：大脚硬塞进小鞋，十分为难、别扭。\n谜底取「难」。属谐音法。"
-    },
-    {
-      "id": "daguniang-zuo-huajiao",
-      "title": "大姑娘坐花轿",
-      "answer": "迎",
-      "answer_len": 1,
-      "type": "谐音",
-      "subtype": "歇后",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "谐音",
-        "歇后",
-        "人体"
-      ],
-      "source": "S1+S2",
-      "license": "public-domain",
-      "jie": "歇后语「大姑娘坐花轿——迎（迎）亲」：姑娘坐花轿是去迎亲出嫁。\n谜底取「迎」。属谐音法。"
-    },
-    {
-      "id": "erliang-mianhua",
-      "title": "二两棉花",
-      "answer": "谈",
-      "answer_len": 1,
-      "type": "谐音",
-      "subtype": "歇后",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "谐音",
-        "歇后",
-        "物品"
-      ],
-      "source": "S1+S2",
-      "license": "public-domain",
-      "jie": "歇后语「二两棉花——谈（弹）不上线」：二两棉花太少，纺不出线，即「弹不上线」。\n「谈」与「弹」谐音，谜底取「谈」。属谐音法。"
-    },
-    {
-      "id": "kongfuzi-banjia",
-      "title": "孔夫子搬家",
-      "answer": "书",
-      "answer_len": 1,
-      "type": "谐音",
-      "subtype": "歇后",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "谐音",
-        "歇后",
-        "典故"
-      ],
-      "source": "S1+S2",
-      "license": "public-domain",
-      "jie": "歇后语「孔夫子搬家——净是书（输）」：孔夫子满腹经纶，搬家的东西净是书。\n「书」与「输」谐音，谜底取「书」。属谐音法。"
-    },
-    {
-      "id": "shiwu-ge-tong",
-      "title": "十五个桶",
-      "answer": "忍",
-      "answer_len": 1,
-      "type": "谐音",
-      "subtype": "歇后",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "谐音",
-        "歇后",
-        "数字"
-      ],
-      "source": "S1+S2",
-      "license": "public-domain",
-      "jie": "歇后语「十五个桶——忍（捅）气」：十五个「桶」即「忍」字（「忍」可拆为「十」「五」「心」，\n又与「捅」谐音）。谜底取「忍」。属谐音法。"
-    },
-    {
-      "id": "waisheng-da-denglong",
-      "title": "外甥打灯笼",
-      "answer": "照",
-      "answer_len": 1,
-      "type": "谐音",
-      "subtype": "歇后",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "谐音",
-        "歇后",
-        "人体"
-      ],
-      "source": "S1+S2",
-      "license": "public-domain",
-      "jie": "歇后语「外甥打灯笼——照（舅）姑」：外甥提着灯笼照向舅舅、姑姑。\n「照」与「舅」谐音，谜底取「照」。属谐音法。"
-    },
-    {
-      "id": "xiaotongban-doufu",
-      "title": "小葱拌豆腐",
-      "answer": "清",
-      "answer_len": 1,
-      "type": "谐音",
-      "subtype": "歇后",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "谐音",
-        "歇后",
-        "食物"
-      ],
-      "source": "S1+S2",
-      "license": "public-domain",
-      "jie": "歇后语「小葱拌豆腐——一清（青）二白」：小葱青、豆腐白，分明是「一青二白」。\n「清」与「青」谐音，谜底取「清」。属谐音法。"
-    },
-    {
-      "id": "zhulan-dashui",
-      "title": "竹篮打水",
-      "answer": "场",
-      "answer_len": 1,
-      "type": "谐音",
-      "subtype": "歇后",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "谐音",
-        "歇后",
-        "物品"
-      ],
-      "source": "S1+S2",
-      "license": "public-domain",
-      "jie": "歇后语「竹篮打水——一场空」：用竹篮打水，水会从缝隙漏光，最终一无所获，即「一场空」。\n谜底取谐音字「场」（一场空）。属谐音法。"
+      "jie": "典出大禹治水，「三过家门而不入」。\n谜面「三过其门」截去「而入」，关键在「不」入——以史事典故会意，\n取「不」字。属典故法：借历史典故取字。\n（中置信：谜面截断典故，取「不」为通行解，解析已注明典故出处。）"
     },
     {
       "id": "ermu-cheng-lin",
@@ -1455,23 +653,6 @@
       "jie": "「此」字左「五」右「止」。「用心方悟得」即去掉「止」，余「五」。属增损法。"
     },
     {
-      "id": "dì-er-ci-jiànmiàn",
-      "title": "第二次见面",
-      "answer": "观",
-      "answer_len": 1,
-      "type": "增损",
-      "subtype": "左右",
-      "difficulty": 2,
-      "structure": null,
-      "tags": [
-        "增损",
-        "左右"
-      ],
-      "source": "S3",
-      "license": "public-domain",
-      "jie": "「观」字左「又」右「见」。「第二次」扣「又」，「见面」扣「见」。合之得「观」。属增损法。"
-    },
-    {
       "id": "duo-yiban",
       "title": "多一半",
       "answer": "夕",
@@ -1487,6 +668,23 @@
       "source": "S1+S3",
       "license": "public-domain",
       "jie": "「多」字由上下两个「夕」叠成。取「多」的一半，即剩一个「夕」字。\n属减损法：把已有字减掉一部分。"
+    },
+    {
+      "id": "dì-er-ci-jiànmiàn",
+      "title": "第二次见面",
+      "answer": "观",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "增损",
+        "左右"
+      ],
+      "source": "S3",
+      "license": "public-domain",
+      "jie": "「观」字左「又」右「见」。「第二次」扣「又」，「见面」扣「见」。合之得「观」。属增损法。"
     },
     {
       "id": "erren-xiangfeng-chuan-fuyin",
@@ -1985,6 +1183,808 @@
       "source": "S1+S3",
       "license": "public-domain",
       "jie": "「春」字拆为「三」「人」「日」三部分。\n- 「春雨绵绵」——连绵阴雨，不见日头，减去「日」，剩「三」「人」。\n- 「妻独宿」——丈夫不在，「夫」=「二」+「人」，再减去「夫」。\n\n「三」+「人」−「二」−「人」=「一」。属增损减损法，层层剥字。"
+    },
+    {
+      "id": "renyan-chengxin",
+      "title": "人言诚信为本",
+      "answer": "信",
+      "answer_len": 1,
+      "type": "当代",
+      "subtype": "拼合",
+      "difficulty": 1,
+      "structure": null,
+      "tags": [
+        "当代",
+        "拼合",
+        "品德"
+      ],
+      "source": "S4",
+      "license": "cc-by-4.0",
+      "jie": "「人」与「言」相合，即为「信」字。\n人言为信，是「信」字本义的回归：人说的话，要算数。"
+    },
+    {
+      "id": "rifu-yiri",
+      "title": "日复一日",
+      "answer": "昌",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "上下",
+      "difficulty": 1,
+      "structure": {
+        "ops": [
+          {
+            "part": "日",
+            "from": "日",
+            "op": "full"
+          },
+          {
+            "part": "日",
+            "from": "日",
+            "op": "full"
+          }
+        ],
+        "result": "昌"
+      },
+      "tags": [
+        "拆字",
+        "时间"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「昌」字上「日」下「日」，正是两个「日」相叠。「日复一日」即一日又一日，\n上下两「日」合成「昌」。属拆字法。"
+    },
+    {
+      "id": "shangshan-haishui",
+      "title": "山上还有水",
+      "answer": "汕",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "左右",
+      "difficulty": 1,
+      "structure": {
+        "ops": [
+          {
+            "part": "山",
+            "from": "山",
+            "op": "full"
+          },
+          {
+            "part": "水",
+            "from": "水",
+            "op": "full"
+          }
+        ],
+        "result": "汕"
+      },
+      "tags": [
+        "拆字",
+        "自然"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「汕」字左「山」右「水」。谜面「山上还有水」，即在「山」旁再添「水」，\n左右相合得「汕」。属拆字法。"
+    },
+    {
+      "id": "shikou-zhangkou",
+      "title": "十张口",
+      "answer": "田",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "拼合",
+      "difficulty": 1,
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          }
+        ],
+        "result": "田"
+      },
+      "tags": [
+        "拆字",
+        "拼合"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「十」与「口」相合，即为「田」字。\n属拆字拼合：把两个部件重新组合成字。"
+    },
+    {
+      "id": "yibian-yu-yibian-yang",
+      "title": "一边是鱼，一边是羊，两边不一样",
+      "answer": "鲜",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "左右",
+      "difficulty": 1,
+      "structure": {
+        "ops": [
+          {
+            "part": "鱼",
+            "from": "鱼",
+            "op": "full"
+          },
+          {
+            "part": "羊",
+            "from": "羊",
+            "op": "full"
+          }
+        ],
+        "result": "鲜"
+      },
+      "tags": [
+        "拆字",
+        "动物"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「鲜」字左「鱼」右「羊」，左右两半截然不同，故「两边不一样」。\n鱼与羊皆为鲜美之味，合为「鲜」字。属拆字法。"
+    },
+    {
+      "id": "ren-zai-cao-mu-zhong",
+      "title": "人在草木中",
+      "answer": "茶",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "拼合",
+      "difficulty": 2,
+      "structure": {
+        "ops": [
+          {
+            "part": "艹",
+            "from": "草",
+            "op": "part"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "木",
+            "from": "木",
+            "op": "full"
+          }
+        ],
+        "result": "茶"
+      },
+      "tags": [
+        "拆字",
+        "拼合"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「草」字头是「艹」，「木」在下，「人」夹在中间，\n「艹」+「人」+「木」合为「茶」字。属拆字拼合：部件按位置重组。"
+    },
+    {
+      "id": "shikou-xinsi",
+      "title": "十口心思",
+      "answer": "思",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "拼合",
+      "difficulty": 2,
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          },
+          {
+            "part": "心",
+            "from": "心",
+            "op": "full"
+          }
+        ],
+        "result": "思"
+      },
+      "tags": [
+        "拆字",
+        "拼合"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「十」与「口」相合为「田」，「田」下加「心」，即为「思」字。\n属拆字拼合：把若干部件重新组合成字。"
+    },
+    {
+      "id": "yibian-lv-yibian-hong",
+      "title": "一边绿，一边红，一边吃水，一边生火",
+      "answer": "秋",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "左右",
+      "difficulty": 2,
+      "structure": {
+        "ops": [
+          {
+            "part": "禾",
+            "from": "绿",
+            "op": "free"
+          },
+          {
+            "part": "火",
+            "from": "红",
+            "op": "free"
+          }
+        ],
+        "result": "秋"
+      },
+      "tags": [
+        "拆字",
+        "颜色",
+        "自然"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「秋」字左「禾」右「火」。「禾」是庄稼草木，颜色是绿；「火」的颜色是红。\n庄稼禾苗靠水灌溉（吃水），火苗则能生火。左右两半各对一句，合起来正是「秋」。属拆字法。"
+    },
+    {
+      "id": "yiren-yizhang-kou",
+      "title": "一人一张口，口下长只手",
+      "answer": "拿",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "上下",
+      "difficulty": 2,
+      "structure": {
+        "ops": [
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "一",
+            "from": "一",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          },
+          {
+            "part": "手",
+            "from": "手",
+            "op": "free"
+          }
+        ],
+        "result": "拿"
+      },
+      "tags": [
+        "拆字",
+        "人体"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「拿」字上「合」下「手」。「合」由「人」「一」「口」合成，正是「一人一张口」。\n其下再长出一「手」，即「口下长只手」。上下相合得「拿」。属拆字法。"
+    },
+    {
+      "id": "banged-bandu",
+      "title": "半耕半读",
+      "answer": "讲",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "各半",
+      "difficulty": 3,
+      "structure": {
+        "ops": [
+          {
+            "part": "讠",
+            "from": "读",
+            "op": "half"
+          },
+          {
+            "part": "井",
+            "from": "耕",
+            "op": "half_r"
+          }
+        ],
+        "result": "讲"
+      },
+      "tags": [
+        "拆字",
+        "各半"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「耕」字的右半是「井」，「读」字的左半是「言字旁（讠）」。\n各取一半，「讠」与「井」相合，即为「讲」字。属拆字各半法。"
+    },
+    {
+      "id": "banqing-banzi",
+      "title": "半青半紫",
+      "answer": "素",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "各半",
+      "difficulty": 3,
+      "structure": null,
+      "tags": [
+        "拆字",
+        "各半"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「青」字的上半是「龶」（青字头），「紫」字的下半是「糸」。\n各取一半，「龶」与「糸」相合，即为「素」字。属拆字各半法。"
+    },
+    {
+      "id": "chunxiang-lianye-tinqinsheng",
+      "title": "春香连夜听琴声",
+      "answer": "秦",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "上下",
+      "difficulty": 3,
+      "structure": {
+        "ops": [
+          {
+            "part": "三",
+            "from": "春",
+            "op": "part"
+          },
+          {
+            "part": "人",
+            "from": "春",
+            "op": "part"
+          },
+          {
+            "part": "禾",
+            "from": "香",
+            "op": "part"
+          }
+        ],
+        "result": "秦"
+      },
+      "tags": [
+        "拆字",
+        "上下"
+      ],
+      "source": "S3",
+      "license": "public-domain",
+      "jie": "「春」字上部「三人」（三+人）取「三」与「人」，「香」字下部取「禾」。合「三」「人」「禾」得「秦」。「秦」字正由「春」之上与「香」之下拼成。属拆字法。"
+    },
+    {
+      "id": "qianli-xiangfeng",
+      "title": "千里相逢",
+      "answer": "重",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "拼合",
+      "difficulty": 3,
+      "structure": {
+        "ops": [
+          {
+            "part": "千",
+            "from": "千",
+            "op": "full"
+          },
+          {
+            "part": "里",
+            "from": "里",
+            "op": "full"
+          }
+        ],
+        "result": "重"
+      },
+      "tags": [
+        "拆字",
+        "拼合"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「千」与「里」相逢相合，即为「重」字。\n重 = 千 + 里，是典型的拆字拼合：把两个部件重新组合成字。"
+    },
+    {
+      "id": "yikou-yao-niuban",
+      "title": "一口咬掉牛半截",
+      "answer": "告",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "咬损",
+      "difficulty": 3,
+      "structure": null,
+      "tags": [
+        "拆字",
+        "咬损"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「一口」是「口」字。「咬掉牛半截」即把「牛」字的下半截咬去，\n剩下「牛」的上半（形如「告」的上部）。\n口在下、牛之半在上，合成「告」字。属拆字咬损法。"
+    },
+    {
+      "id": "yiren-zainei",
+      "title": "一人在内",
+      "answer": "肉",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "嵌人",
+      "difficulty": 3,
+      "structure": null,
+      "tags": [
+        "拆字",
+        "嵌人"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「肉」字是「人」嵌在「冂」框之内。\n「一人在内」即人字在框内，合为「肉」。属拆字嵌人法。\n（近形说明：「内」也是「人」在「冂」内，与「肉」仅一横之差。本谜按通行谜底取「肉」，\n此近形歧义如实注出，不隐藏；取「肉」的依据是「肉」为常用字、谜底指向更明确。）"
+    },
+    {
+      "id": "bashiba",
+      "title": "八十八",
+      "answer": "米",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "数字",
+      "difficulty": 1,
+      "structure": null,
+      "tags": [
+        "数字",
+        "食物"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「米」字可拆为两个「八」加中间一「十」（八、十、八）。谜面「八十八」即八、十、八相合，\n合成「米」。属数字拆字法。"
+    },
+    {
+      "id": "sansan-ri",
+      "title": "三个三日",
+      "answer": "晶",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "叠字",
+      "difficulty": 1,
+      "structure": null,
+      "tags": [
+        "数字",
+        "叠字",
+        "自然"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「晶」字由三个「日」组成。「三个三日」即三「日」相合，得「晶」。属数字法。"
+    },
+    {
+      "id": "shi'er-ge-yue",
+      "title": "十二个月",
+      "answer": "年",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "纪年",
+      "difficulty": 1,
+      "structure": null,
+      "tags": [
+        "数字",
+        "时间"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "一年共有十二个月。「十二个月」即「年」。属数字会意法。"
+    },
+    {
+      "id": "jiushijiu",
+      "title": "九十九",
+      "answer": "百",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "差一",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "数字",
+        "差一"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "九十九离「一百」只差一，即是「百」字少一笔「一」。\n以数推字，差一即是「百」。属数字会意法。"
+    },
+    {
+      "id": "qishier-xiaoshi",
+      "title": "七十二小时",
+      "answer": "晶",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "三日",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "数字",
+        "三日"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "七十二小时即三天，也就是「三日」。\n三个「日」字相叠，即为「晶」字。属数字会意法。"
+    },
+    {
+      "id": "yibian-yiban",
+      "title": "一边一半",
+      "answer": "秋",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "左右",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "数字",
+        "自然"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「秋」字左「禾」右「火」。「禾」与「火」各占一半，合为「秋」。「一边一半」即两半相合，得「秋」。属数字法。"
+    },
+    {
+      "id": "shangxia-xianglian",
+      "title": "上下相连",
+      "answer": "卡",
+      "answer_len": 1,
+      "type": "方位",
+      "subtype": "叠字",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "方位",
+        "叠字"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「上」字在下、「下」字在上，两字相叠共用中间一横，即为「卡」字。\n卡 = 上 + 下，是典型的方位叠字谜。"
+    },
+    {
+      "id": "bantui-banjiu",
+      "title": "半推半就",
+      "answer": "掠",
+      "answer_len": 1,
+      "type": "离合",
+      "subtype": "各半",
+      "difficulty": 3,
+      "structure": null,
+      "tags": [
+        "离合",
+        "各半"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「推」取左半，是提手旁「扌」；「就」取右半，是「京」。\n扌与京相合，即为「掠」字。属离合各半法：各取一字之半，离合相合。"
+    },
+    {
+      "id": "dajiao-chuan-xiaoxie",
+      "title": "大脚穿小鞋",
+      "answer": "难",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 1,
+      "structure": null,
+      "tags": [
+        "谐音",
+        "歇后",
+        "物品"
+      ],
+      "source": "S1+S2",
+      "license": "public-domain",
+      "jie": "歇后语「大脚穿小鞋——难（难）」：大脚硬塞进小鞋，十分为难、别扭。\n谜底取「难」。属谐音法。"
+    },
+    {
+      "id": "daguniang-zuo-huajiao",
+      "title": "大姑娘坐花轿",
+      "answer": "迎",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "谐音",
+        "歇后",
+        "人体"
+      ],
+      "source": "S1+S2",
+      "license": "public-domain",
+      "jie": "歇后语「大姑娘坐花轿——迎（迎）亲」：姑娘坐花轿是去迎亲出嫁。\n谜底取「迎」。属谐音法。"
+    },
+    {
+      "id": "erliang-mianhua",
+      "title": "二两棉花",
+      "answer": "谈",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "谐音",
+        "歇后",
+        "物品"
+      ],
+      "source": "S1+S2",
+      "license": "public-domain",
+      "jie": "歇后语「二两棉花——谈（弹）不上线」：二两棉花太少，纺不出线，即「弹不上线」。\n「谈」与「弹」谐音，谜底取「谈」。属谐音法。"
+    },
+    {
+      "id": "kongfuzi-banjia",
+      "title": "孔夫子搬家",
+      "answer": "书",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "谐音",
+        "歇后",
+        "典故"
+      ],
+      "source": "S1+S2",
+      "license": "public-domain",
+      "jie": "歇后语「孔夫子搬家——净是书（输）」：孔夫子满腹经纶，搬家的东西净是书。\n「书」与「输」谐音，谜底取「书」。属谐音法。"
+    },
+    {
+      "id": "shiwu-ge-tong",
+      "title": "十五个桶",
+      "answer": "忍",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "谐音",
+        "歇后",
+        "数字"
+      ],
+      "source": "S1+S2",
+      "license": "public-domain",
+      "jie": "歇后语「十五个桶——忍（捅）气」：十五个「桶」即「忍」字（「忍」可拆为「十」「五」「心」，\n又与「捅」谐音）。谜底取「忍」。属谐音法。"
+    },
+    {
+      "id": "waisheng-da-denglong",
+      "title": "外甥打灯笼",
+      "answer": "照",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "谐音",
+        "歇后",
+        "人体"
+      ],
+      "source": "S1+S2",
+      "license": "public-domain",
+      "jie": "歇后语「外甥打灯笼——照（舅）姑」：外甥提着灯笼照向舅舅、姑姑。\n「照」与「舅」谐音，谜底取「照」。属谐音法。"
+    },
+    {
+      "id": "xiaotongban-doufu",
+      "title": "小葱拌豆腐",
+      "answer": "清",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "谐音",
+        "歇后",
+        "食物"
+      ],
+      "source": "S1+S2",
+      "license": "public-domain",
+      "jie": "歇后语「小葱拌豆腐——一清（青）二白」：小葱青、豆腐白，分明是「一青二白」。\n「清」与「青」谐音，谜底取「清」。属谐音法。"
+    },
+    {
+      "id": "zhulan-dashui",
+      "title": "竹篮打水",
+      "answer": "场",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "谐音",
+        "歇后",
+        "物品"
+      ],
+      "source": "S1+S2",
+      "license": "public-domain",
+      "jie": "歇后语「竹篮打水——一场空」：用竹篮打水，水会从缝隙漏光，最终一无所获，即「一场空」。\n谜底取谐音字「场」（一场空）。属谐音法。"
+    },
+    {
+      "id": "riyue-hebi",
+      "title": "日月合璧",
+      "answer": "明",
+      "answer_len": 1,
+      "type": "象形",
+      "subtype": "左右",
+      "difficulty": 1,
+      "structure": null,
+      "tags": [
+        "象形",
+        "自然"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「明」字左「日」右「月」。「日月合璧」即「日」与「月」相合，得「明」。属象形法。"
+    },
+    {
+      "id": "taiyang-gua-zai-shushao",
+      "title": "太阳挂在树梢",
+      "answer": "杲",
+      "answer_len": 1,
+      "type": "象形",
+      "subtype": "上下",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "象形",
+        "自然"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「杲」字上「日」下「木」。太阳（日）挂在树（木）的梢头，即「日」在「木」之上。\n象形会意得「杲」。属象形法。"
+    },
+    {
+      "id": "taiyang-luo-zai-shushao",
+      "title": "太阳落在树梢",
+      "answer": "杳",
+      "answer_len": 1,
+      "type": "象形",
+      "subtype": "上下",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "象形",
+        "自然"
+      ],
+      "source": "S1",
+      "license": "public-domain",
+      "jie": "「杳」字上「木」下「日」。太阳（日）落在树（木）的底下，即「日」在「木」之下。\n象形会意得「杳」。属象形法。"
+    },
+    {
+      "id": "yilun-wanyue",
+      "title": "一轮弯月",
+      "answer": "夕",
+      "answer_len": 1,
+      "type": "象形",
+      "subtype": "形似",
+      "difficulty": 2,
+      "structure": null,
+      "tags": [
+        "象形",
+        "形似"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "「夕」字的笔画正是一弯如钩的形状，像一轮弯月挂在天上。\n属象形法：按字形象形取意。"
+    },
+    {
+      "id": "yidian-yiheng-chang",
+      "title": "一点一横长",
+      "answer": "府",
+      "answer_len": 1,
+      "type": "象形",
+      "subtype": "笔画",
+      "difficulty": 4,
+      "structure": null,
+      "tags": [
+        "象形",
+        "笔画"
+      ],
+      "source": "S1+S3",
+      "license": "public-domain",
+      "jie": "按笔顺逐笔描形：\n- 「一点一横长」——「广」字头的点、横；\n- 「一撇到南洋」——「广」的长撇，撇势深远如「到南洋」；\n- 「南洋有个人」——「亻」，即「人」字旁；\n- 「只有一寸长」——「寸」。\n\n广 + 亻 + 寸，合为「府」字。属笔画描形法，是流传最广的笔画谜之一。"
     }
   ],
   "history": {

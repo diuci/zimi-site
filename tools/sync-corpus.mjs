@@ -66,10 +66,13 @@ export function buildSnapshot(data, sha256) {
     for (const f of FIELDS) rec[f] = r[f] === undefined ? null : r[f]
     return rec
   })
-  // 稳定排序：谜种（CANON 顺序由客户端 daily.mjs 处理，这里按 type/difficulty/id 保证可复算）
-  riddles.sort((a, b) => (a.type || '').localeCompare(b.type || '')
+  // 稳定排序：谜种（CANON 顺序由客户端 daily.mjs 处理，这里按 type/difficulty/id 保证可复算）。
+  // 注意用码点比较（</>）而不是 localeCompare——中文的 locale 排序依赖宿主 ICU，
+  // Windows 本机与 CI (Ubuntu) 可能给出不同顺序，快照就会「跨机器必漂移」。
+  riddles.sort((a, b) =>
+    (a.type < b.type ? -1 : a.type > b.type ? 1 : 0)
     || (a.difficulty || 0) - (b.difficulty || 0)
-    || String(a.id).localeCompare(String(b.id)))
+    || (String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0))
   // 解析从 md 提取（路径字段在 riddles.json 里是 'riddles/<谜种>/<名>.md'）
   const byId = new Map(data.riddles.map((r) => [r.id, r]))
   for (const rec of riddles) {
@@ -106,7 +109,8 @@ export function freezeHistory(oldCorpus, today, freshIds) {
       added++
     }
   }
-  days.sort((a, b) => a.day.localeCompare(b.day))
+  // 日期是 ASCII，但排序照样用码点比较——localeCompare 的稳定性依赖宿主 ICU
+  days.sort((a, b) => (a.day < b.day ? -1 : a.day > b.day ? 1 : 0))
   const fresh = freshIds || new Set((oldCorpus && oldCorpus.riddles || []).map((r) => r.id))
   const oldById = new Map((oldCorpus && oldCorpus.riddles || []).map((r) => [r.id, r]))
   for (const rec of days) {
