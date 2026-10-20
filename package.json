@@ -10,12 +10,13 @@
     "dev:game": "vite",
     "build": "npm run prebuild && vitepress build site && vite build",
     "build:game": "vite build",
-    "preview": "vitepress preview site",
+    "preview": "vite preview",
     "sync:corpus": "node tools/sync-corpus.mjs",
     "check:corpus": "node tools/sync-corpus.mjs --check",
     "check:puzzle": "node tools/check-puzzle.mjs",
     "check:forge": "node tools/check-forge.mjs",
-    "verify": "node tools/sync-corpus.mjs --selftest && node tools/check-puzzle.mjs --selftest && node tools/check-forge.mjs --selftest && npm run build && npm run check:corpus && npm run check:puzzle && npm run check:forge && node tools/check-legal.mjs && node tools/check-pages.py && node tools/check-typography.mjs && node tools/check-ui.mjs"
+    "check:core": "node tools/check-core.mjs",
+    "verify": "node tools/sync-corpus.mjs --selftest && node tools/check-puzzle.mjs --selftest && node tools/check-forge.mjs --selftest && npm run build && npm run check:corpus && npm run check:puzzle && npm run check:forge && node tools/check-legal.mjs && python tools/check-pages.py && node tools/check-typography.mjs && node tools/check-ui.mjs && node tools/check-core.mjs"
   },
   "dependencies": {
     "vue": "^3.5.13"

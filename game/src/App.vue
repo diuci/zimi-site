@@ -15,6 +15,7 @@ const TABS = [
   { id: 'daily', label: '每日一谜' },
   { id: 'practice', label: '自由练习' },
   { id: 'forge', label: '字谜工坊' },
+  { id: 'book', label: '谜库', href: '/book/riddles/索引' },
 ]
 
 onMounted(() => {
@@ -31,12 +32,10 @@ onMounted(() => {
     </header>
 
     <nav class="tabs" aria-label="玩法选择">
-      <button
-        v-for="t in TABS"
-        :key="t.id"
-        :class="{ on: tab === t.id }"
-        @click="tab = t.id"
-      >{{ t.label }}</button>
+      <template v-for="t in TABS" :key="t.id">
+        <a v-if="t.href" :class="{ on: false }" :href="t.href">{{ t.label }}</a>
+        <button v-else :class="{ on: tab === t.id }" @click="tab = t.id">{{ t.label }}</button>
+      </template>
     </nav>
 
     <main>

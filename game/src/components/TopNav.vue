@@ -34,7 +34,7 @@ const PARKS = [
   { href: 'https://k12.diuci.com/', label: '学古诗' },
   { href: 'https://jiagu.diuci.com/', label: '画甲骨' },
   { href: 'https://lian.diuci.com/', label: '连词' },
-  { href: '/play/', label: '猜谜', on: true },
+  { href: '/', label: '猜谜', on: true },
   { href: 'https://handle.diuci.com/', label: '汉兜' },
   { href: 'https://moon.diuci.com/', label: '月冕' },
   { href: 'https://ink.diuci.com/', label: '大作战' },
@@ -43,7 +43,7 @@ const PARKS = [
 
 <template>
   <nav class="dc-nav">
-    <a class="dc-brand" href="/play/">
+    <a class="dc-brand" href="/">
       <span class="dc-seal">猜</span>
       <span class="dc-brand-t">猜谜</span>
     </a>

@@ -6,7 +6,7 @@ const PARKS = [
   { href: 'https://k12.diuci.com/', label: '学古诗' },
   { href: 'https://jiagu.diuci.com/', label: '画甲骨' },
   { href: 'https://lian.diuci.com/', label: '连词' },
-  { href: '/play/', label: '猜谜' },
+  { href: '/', label: '猜谜' },
   { href: 'https://handle.diuci.com/', label: '汉兜' },
   { href: 'https://moon.diuci.com/', label: '月冕' },
   { href: 'https://ink.diuci.com/', label: '大作战' },

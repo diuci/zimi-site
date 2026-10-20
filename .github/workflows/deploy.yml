@@ -111,19 +111,23 @@ jobs:
         if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: node tools/check-ui.mjs
 
-      - name: 构建站点
+      - name: 构建
         if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: npm run build
-        env:
-          SITE_BASE: '/'
+
+      - name: 统一核心闸门
+        if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
+        run: node tools/check-core.mjs
 
       - name: 把 dist 落到 main 根并推送
         if: "!startsWith(steps.head.outputs.msg, 'deploy:')"
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # dist 与源码并存于根：源码在 tools/、site/，产物在 index.html、assets/、riddles/…
+          # dist 与源码并存于根：源码在 tools/、site/、game/，产物在 index.html、assets/、book/…
           cp -r site/.vitepress/dist/. .
+          # 旧 /play/ 链接兜底：同一份游戏入口（base=/ 后 assets 走根，query 参数全兼容）
+          mkdir -p play && cp site/.vitepress/dist/index.html play/index.html
           # 内容仓只用于构建，提交前删掉，免得混进 main 成 gitlink
           rm -rf content
           git add -A
