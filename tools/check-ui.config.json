@@ -59,5 +59,8 @@
   "sidebarSelectors": [
     ".VPSidebar",
     ".dc-sidebar"
+  ],
+  "tabbarFiles": [
+    "core/tabbar.json"
   ]
 }
