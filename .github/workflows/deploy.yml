@@ -126,6 +126,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # dist 与源码并存于根：源码在 tools/、site/、game/，产物在 index.html、assets/、book/…
           cp -r site/.vitepress/dist/. .
+          # v4 删简繁（全站仅简体）：dist 已不含 /trad/ 镜像页，
+          # 但 cp 是叠加式的——旧部署提交进来的繁体产物必须显式清掉，否则永远躺在根上。
+          rm -rf trad book/trad
+          find assets -maxdepth 1 -name 'trad_*' -delete || true
+          find book/assets -maxdepth 1 -name 'trad_*' -delete || true
           # 旧 /play/ 链接兜底：同一份游戏入口（base=/ 后 assets 走根，query 参数全兼容）
           mkdir -p play && cp site/.vitepress/dist/index.html play/index.html
           # 内容仓只用于构建，提交前删掉，免得混进 main 成 gitlink

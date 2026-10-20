@@ -79,8 +79,7 @@ def build(content_root, site_dir):
     (out_public / 'catalog.json').write_text(
         json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (out_riddles / '索引.md').write_text(render_index(payload.get('riddles', [])), encoding='utf-8')
-    # v4 起全站仅简体：/trad/ 镜像页生成已下线（内容仓繁体引擎保留，站点不再消费）。
-    return copied, payload.get('count', 0), 0
+    return copied, payload.get('count', 0)
 
 
 def selftest():
@@ -100,32 +99,22 @@ def selftest():
                          'license': 'public-domain', 'copyright': {'text': 'public-domain', 'annotations': 'cc-by-4.0'},
                          'tags': [], 'path': 'riddles/增损/山上还有山.md'}]}), encoding='utf-8')
         site = tdr / 'site'
-        # 造一份 traditional.json，证明繁体页会被生成
-        (content / 'data' / 'traditional.json').write_text(json.dumps({
-            'version': 1, 'count': 1, 'rows': [
-                {'id': 't', 'title_t': '山上還有山', 'body_t':
-                 '---\nid: t\ntitle: 山上還有山\n---\n\n# 山上還有山\n\n**謎面**：山上還有山\n'}],
-            'ui': {'索引': '索引', '增损': '增損'}}), encoding='utf-8')
-        copied, count, trad_count = build(content, site)
+        copied, count = build(content, site)
         failures = []
-        if copied != 1 or count != 1 or trad_count != 1:
-            failures.append('拷贝/计数错：%d/%d/%d' % (copied, count, trad_count))
+        if copied != 1 or count != 1:
+            failures.append('拷贝/计数错：%d/%d' % (copied, count))
         if not (site / 'riddles' / '增损' / '山上还有山.md').exists():
             failures.append('谜目页未生成')
         if not (site / 'riddles' / '索引.md').exists():
             failures.append('索引页未生成')
-        if not (site / 'trad' / '增损' / '山上还有山.md').exists():
-            failures.append('繁体谜目页未生成')
-        if not (site / 'trad' / '索引.md').exists():
-            failures.append('繁体索引页未生成')
         if not (site / 'public' / 'catalog.json').exists():
             failures.append('catalog 未生成')
         cat = json.loads((site / 'public' / 'catalog.json').read_text(encoding='utf-8'))
         if cat.get('count') != 1:
             failures.append('catalog count 错')
-        trad_body = (site / 'trad' / '增损' / '山上还有山.md').read_text(encoding='utf-8')
-        if '謎面' not in trad_body:
-            failures.append('繁体页未用繁体形（缺 謎面）')
+        body = (site / 'riddles' / '增损' / '山上还有山.md').read_text(encoding='utf-8')
+        if '谜面' not in body:
+            failures.append('谜目页内容缺 谜面')
     if failures:
         print('build-site.py selftest FAILED:')
         for f in failures:
@@ -146,8 +135,8 @@ def main(argv=None):
         print('找不到内容仓 riddles/：CONTENT_ROOT=%s' % content_root)
         print('先 checkout 内容仓，或用 CONTENT_ROOT 指向它。')
         return 1
-    copied, count, trad_count = build(content_root, SITE)
-    print('built zimi-site: %d riddle pages, %d trad pages, catalog %d (content: %s)' % (copied, trad_count, count, content_root))
+    copied, count = build(content_root, SITE)
+    print('built zimi-site: %d riddle pages, catalog %d (content: %s)' % (copied, count, content_root))
     return 0
 
 
