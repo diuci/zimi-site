@@ -1,0 +1,3154 @@
+{
+  "version": 1,
+  "count": 98,
+  "types": {
+    "会意": 15,
+    "典故": 2,
+    "增损": 45,
+    "当代": 1,
+    "拆字": 14,
+    "数字": 6,
+    "方位": 1,
+    "离合": 1,
+    "谐音": 8,
+    "象形": 5
+  },
+  "riddles": [
+    {
+      "id": "xiaochuaner-tui-kai-bolang",
+      "title": "小船儿推开波浪",
+      "answer": "心",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "象形",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "象形"
+      ],
+      "structure": null,
+      "path": "riddles/会意/小船儿推开波浪.md"
+    },
+    {
+      "id": "bashan-kangding",
+      "title": "拔山扛鼎",
+      "answer": "夯",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "动作",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "动作"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "大",
+            "from": "大",
+            "op": "free"
+          },
+          {
+            "part": "力",
+            "from": "力",
+            "op": "free"
+          }
+        ],
+        "result": "夯"
+      },
+      "path": "riddles/会意/拔山扛鼎.md"
+    },
+    {
+      "id": "bu-zai-zhuang-ya-xian-zhen-shen",
+      "title": "不再装哑现真身",
+      "answer": "显",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "动作",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "动作"
+      ],
+      "structure": null,
+      "path": "riddles/会意/不再装哑现真身.md"
+    },
+    {
+      "id": "changhe-luori-yuan",
+      "title": "长河落日圆",
+      "answer": "旦",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "自然",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "自然"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "日",
+            "from": "日",
+            "op": "free"
+          },
+          {
+            "part": "一",
+            "from": "一",
+            "op": "free"
+          }
+        ],
+        "result": "旦"
+      },
+      "path": "riddles/会意/长河落日圆.md"
+    },
+    {
+      "id": "gushen-piaoling-jin-haizai",
+      "title": "孤身飘零今还在",
+      "answer": "生",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "状态",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "状态"
+      ],
+      "structure": null,
+      "path": "riddles/会意/孤身飘零今还在.md"
+    },
+    {
+      "id": "simian-boutu-feng",
+      "title": "四面不透风",
+      "answer": "口",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "形意",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "形意"
+      ],
+      "structure": null,
+      "path": "riddles/会意/四面不透风.md"
+    },
+    {
+      "id": "waimian-yikou-quan",
+      "title": "外面一口圈，里面一口田",
+      "answer": "困",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "上下",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "地形"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          },
+          {
+            "part": "田",
+            "from": "田",
+            "op": "full"
+          }
+        ],
+        "result": "困"
+      },
+      "path": "riddles/会意/外面一口圈里面一口田.md"
+    },
+    {
+      "id": "yijian-chuanxin",
+      "title": "一箭穿心",
+      "answer": "必",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "形意",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "形意"
+      ],
+      "structure": null,
+      "path": "riddles/会意/一箭穿心.md"
+    },
+    {
+      "id": "yiye-you-yiye",
+      "title": "一夜又一夜",
+      "answer": "多",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "叠意",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "叠意"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "夕",
+            "from": "夜",
+            "op": "part"
+          },
+          {
+            "part": "夕",
+            "from": "夜",
+            "op": "part"
+          }
+        ],
+        "result": "多"
+      },
+      "path": "riddles/会意/一夜又一夜.md"
+    },
+    {
+      "id": "you-mian-wu-kou",
+      "title": "有面无口，有脚无手，听人讲话，陪人走路",
+      "answer": "镜",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "物品",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "物品"
+      ],
+      "structure": null,
+      "path": "riddles/会意/有面无口有脚无手.md"
+    },
+    {
+      "id": "you-tou-wu-wei",
+      "title": "有头无尾，有眼无眉，无脚能走，有翅难飞",
+      "answer": "鱼",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "动物",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "动物"
+      ],
+      "structure": null,
+      "path": "riddles/会意/有头无尾有眼无眉.md"
+    },
+    {
+      "id": "shiwutian",
+      "title": "十五天",
+      "answer": "胖",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "拆合",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "拆合"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "半",
+            "from": "半",
+            "op": "free"
+          },
+          {
+            "part": "月",
+            "from": "月",
+            "op": "free"
+          }
+        ],
+        "result": "胖"
+      },
+      "path": "riddles/会意/十五天.md"
+    },
+    {
+      "id": "yijia-shiyi-jiukou",
+      "title": "一家十一口",
+      "answer": "吉",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "合数",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "合数"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "一",
+            "from": "一",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          }
+        ],
+        "result": "吉"
+      },
+      "path": "riddles/会意/一家十一口.md"
+    },
+    {
+      "id": "yijia-yikou",
+      "title": "一家一口",
+      "answer": "问",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "拆合",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "拆合"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "门",
+            "from": "家",
+            "op": "free"
+          },
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          }
+        ],
+        "result": "问"
+      },
+      "path": "riddles/会意/一家一口.md"
+    },
+    {
+      "id": "si-yuan-gong-jiao-er-she-zhi",
+      "title": "思援弓缴而射之",
+      "answer": "忒",
+      "answer_len": 1,
+      "type": "会意",
+      "subtype": "典籍",
+      "difficulty": 4,
+      "author": "徐枕亚",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "会意",
+        "典籍"
+      ],
+      "structure": null,
+      "path": "riddles/会意/思援弓缴而射之.md"
+    },
+    {
+      "id": "simazhao-zhixin",
+      "title": "司马昭之心",
+      "answer": "腹",
+      "answer_len": 1,
+      "type": "典故",
+      "subtype": "成语",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "典故",
+        "成语",
+        "历史"
+      ],
+      "structure": null,
+      "path": "riddles/典故/司马昭之心.md"
+    },
+    {
+      "id": "sanguo-qimen",
+      "title": "三过其门",
+      "answer": "不",
+      "answer_len": 1,
+      "type": "典故",
+      "subtype": "史事",
+      "difficulty": 4,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "典故",
+        "史事"
+      ],
+      "structure": null,
+      "path": "riddles/典故/三过其门.md"
+    },
+    {
+      "id": "ermu-cheng-lin",
+      "title": "二木成林",
+      "answer": "林",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "叠字",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "叠字",
+        "植物"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "木",
+            "from": "木",
+            "op": "full"
+          },
+          {
+            "part": "木",
+            "from": "木",
+            "op": "full"
+          }
+        ],
+        "result": "林"
+      },
+      "path": "riddles/增损/二木成林.md"
+    },
+    {
+      "id": "ernv-shuangquan",
+      "title": "儿女双全",
+      "answer": "好",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "左右",
+        "家庭"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "女",
+            "from": "女",
+            "op": "full"
+          },
+          {
+            "part": "子",
+            "from": "子",
+            "op": "full"
+          }
+        ],
+        "result": "好"
+      },
+      "path": "riddles/增损/儿女双全.md"
+    },
+    {
+      "id": "housheng-xiaozi",
+      "title": "后生小子",
+      "answer": "孙",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "左右",
+        "人"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "子",
+            "from": "子",
+            "op": "full"
+          },
+          {
+            "part": "小",
+            "from": "小",
+            "op": "full"
+          }
+        ],
+        "result": "孙"
+      },
+      "path": "riddles/增损/后生小子.md"
+    },
+    {
+      "id": "renren-douyou-xiongxin",
+      "title": "人人都有雄心",
+      "answer": "众",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "叠字",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "叠字",
+        "人"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "众"
+      },
+      "path": "riddles/增损/人人都有雄心.md"
+    },
+    {
+      "id": "sanxing-cuoluo-ying-tianya",
+      "title": "三星错落映天涯",
+      "answer": "六",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "数字",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "数字"
+      ],
+      "structure": null,
+      "path": "riddles/增损/三星错落映天涯.md"
+    },
+    {
+      "id": "shangshan-haishan",
+      "title": "山上还有山",
+      "answer": "出",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "叠字",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "叠字",
+        "方位"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "山",
+            "from": "山",
+            "op": "full"
+          },
+          {
+            "part": "山",
+            "from": "山",
+            "op": "full"
+          }
+        ],
+        "result": "出"
+      },
+      "path": "riddles/增损/山上还有山.md"
+    },
+    {
+      "id": "shaoshidui-duiqi-piaoyang",
+      "title": "少先队队旗飘扬",
+      "answer": "从",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "叠字",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "叠字",
+        "人"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "人",
+            "from": "人",
+            "op": "free"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "free"
+          }
+        ],
+        "result": "从"
+      },
+      "path": "riddles/增损/少先队队旗飘扬.md"
+    },
+    {
+      "id": "shi'er-dian",
+      "title": "十二点",
+      "answer": "斗",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "增减",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "数字"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "二",
+            "from": "二",
+            "op": "full"
+          },
+          {
+            "part": "丶",
+            "from": "点",
+            "op": "free"
+          }
+        ],
+        "result": "斗"
+      },
+      "path": "riddles/增损/十二点.md"
+    },
+    {
+      "id": "yishang-yixia",
+      "title": "一上一下",
+      "answer": "卡",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "增减",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "方位"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "上",
+            "from": "上",
+            "op": "full"
+          },
+          {
+            "part": "下",
+            "from": "下",
+            "op": "full"
+          }
+        ],
+        "result": "卡"
+      },
+      "path": "riddles/增损/一上一下.md"
+    },
+    {
+      "id": "youmeiyou-shangbian",
+      "title": "有没有上边",
+      "answer": "月",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "月",
+            "from": "有",
+            "op": "minus"
+          }
+        ],
+        "result": "月"
+      },
+      "path": "riddles/增损/有没有上边.md"
+    },
+    {
+      "id": "zixiao-hao-jiejian",
+      "title": "自小好节俭",
+      "answer": "省",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "上下",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "上下"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "自",
+            "from": "自",
+            "op": "full"
+          },
+          {
+            "part": "小",
+            "from": "小",
+            "op": "full"
+          }
+        ],
+        "result": "省"
+      },
+      "path": "riddles/增损/自小好节俭.md"
+    },
+    {
+      "id": "baotou-xiaxuele",
+      "title": "包头下雪了",
+      "answer": "雹",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "上下",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "上下"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "包",
+            "from": "包",
+            "op": "full"
+          },
+          {
+            "part": "雨",
+            "from": "雪",
+            "op": "part"
+          }
+        ],
+        "result": "雹"
+      },
+      "path": "riddles/增损/包头下雪了.md"
+    },
+    {
+      "id": "ciren-zhuanggan-dangguanle",
+      "title": "此人转干当官了",
+      "answer": "仕",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "左右",
+        "人"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "亻",
+            "from": "此",
+            "op": "free"
+          },
+          {
+            "part": "士",
+            "from": "士",
+            "op": "free"
+          }
+        ],
+        "result": "仕"
+      },
+      "path": "riddles/增损/此人转干当官了.md"
+    },
+    {
+      "id": "cizi-yongxin-fang-wude",
+      "title": "此字用心方悟得",
+      "answer": "五",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "五",
+            "from": "此",
+            "op": "minus"
+          }
+        ],
+        "result": "五"
+      },
+      "path": "riddles/增损/此字用心方悟得.md"
+    },
+    {
+      "id": "duo-yiban",
+      "title": "多一半",
+      "answer": "夕",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减半",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "减半",
+        "叠字"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "夕",
+            "from": "多",
+            "op": "minus"
+          }
+        ],
+        "result": "夕"
+      },
+      "path": "riddles/增损/多一半.md"
+    },
+    {
+      "id": "dì-er-ci-jiànmiàn",
+      "title": "第二次见面",
+      "answer": "观",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "左右"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "又",
+            "from": "又",
+            "op": "full"
+          },
+          {
+            "part": "见",
+            "from": "见",
+            "op": "full"
+          }
+        ],
+        "result": "观"
+      },
+      "path": "riddles/增损/第二次见面.md"
+    },
+    {
+      "id": "erren-xiangfeng-chuan-fuyin",
+      "title": "二人相逢传福音",
+      "answer": "夫",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "组合",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "组合",
+        "人"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "二",
+            "from": "二",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "夫"
+      },
+      "path": "riddles/增损/二人相逢传福音.md"
+    },
+    {
+      "id": "erren-yuzhong-cang",
+      "title": "二人雨中藏",
+      "answer": "两",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "组合",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "组合",
+        "人"
+      ],
+      "structure": null,
+      "path": "riddles/增损/二人雨中藏.md"
+    },
+    {
+      "id": "houtou-yincang-bujianle",
+      "title": "猴头隐藏不见了",
+      "answer": "侯",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "侯",
+            "from": "猴",
+            "op": "minus"
+          }
+        ],
+        "result": "侯"
+      },
+      "path": "riddles/增损/猴头隐藏不见了.md"
+    },
+    {
+      "id": "jianshui-zhongri-liu",
+      "title": "涧水终日流",
+      "answer": "门",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "门",
+            "from": "涧",
+            "op": "minus"
+          }
+        ],
+        "result": "门"
+      },
+      "path": "riddles/增损/涧水终日流.md"
+    },
+    {
+      "id": "liangdian-zhongjian-yigeren",
+      "title": "两点中间一个人",
+      "answer": "火",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "增减",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "增减"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "丶",
+            "from": "点",
+            "op": "free"
+          },
+          {
+            "part": "丶",
+            "from": "点",
+            "op": "free"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "火"
+      },
+      "path": "riddles/增损/两点中间一个人.md"
+    },
+    {
+      "id": "shiba-kou",
+      "title": "十八口",
+      "answer": "杏",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "增减",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "数字"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "八",
+            "from": "八",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          }
+        ],
+        "result": "杏"
+      },
+      "path": "riddles/增损/十八口.md"
+    },
+    {
+      "id": "shizai-gaige-jiuguo-gai",
+      "title": "十载改革旧貌改",
+      "answer": "早",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "上下",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "上下"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "日",
+            "from": "日",
+            "op": "free"
+          }
+        ],
+        "result": "早"
+      },
+      "path": "riddles/增损/十载改革旧貌改.md"
+    },
+    {
+      "id": "tianli-paodao-tianwai",
+      "title": "田里跑到田外",
+      "answer": "叶",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "左右"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "口",
+            "from": "田",
+            "op": "part"
+          },
+          {
+            "part": "十",
+            "from": "田",
+            "op": "part"
+          }
+        ],
+        "result": "叶"
+      },
+      "path": "riddles/增损/田里跑到田外.md"
+    },
+    {
+      "id": "tianzhong-bujian-ren",
+      "title": "田中不见人",
+      "answer": "囚",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "嵌字",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "嵌字"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "囗",
+            "from": "田",
+            "op": "minus"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "囚"
+      },
+      "path": "riddles/增损/田中不见人.md"
+    },
+    {
+      "id": "wangyou-zoudian",
+      "title": "往右走点",
+      "answer": "王",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "王",
+            "from": "往",
+            "op": "minus"
+          }
+        ],
+        "result": "王"
+      },
+      "path": "riddles/增损/往右走点.md"
+    },
+    {
+      "id": "xuri-dongsheng",
+      "title": "旭日东升",
+      "answer": "九",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "九",
+            "from": "旭",
+            "op": "minus"
+          }
+        ],
+        "result": "九"
+      },
+      "path": "riddles/增损/旭日东升.md"
+    },
+    {
+      "id": "yibian-shui-yibian-huo",
+      "title": "一边是水，一边是火",
+      "answer": "灭",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "增减",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "自然"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "一",
+            "from": "一",
+            "op": "full"
+          },
+          {
+            "part": "火",
+            "from": "火",
+            "op": "full"
+          }
+        ],
+        "result": "灭"
+      },
+      "path": "riddles/增损/一边水一边火.md"
+    },
+    {
+      "id": "yifu-zhongjian-youge-dong",
+      "title": "衣服中间有个洞",
+      "answer": "哀",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "增减",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "增减"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "衣",
+            "from": "衣",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "洞",
+            "op": "free"
+          }
+        ],
+        "result": "哀"
+      },
+      "path": "riddles/增损/衣服中间有个洞.md"
+    },
+    {
+      "id": "yiren-tiao-liang-xiaoren",
+      "title": "一人挑两小人",
+      "answer": "夹",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "增减",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "人体"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "大",
+            "from": "人",
+            "op": "free"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "夹"
+      },
+      "path": "riddles/增损/一人挑两小人.md"
+    },
+    {
+      "id": "yishi-tongren-liu-guan-zhang",
+      "title": "一视同仁刘关张",
+      "answer": "仨",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "叠字",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "叠字",
+        "人"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          }
+        ],
+        "result": "仨"
+      },
+      "path": "riddles/增损/一视同仁刘关张.md"
+    },
+    {
+      "id": "youde-shifen",
+      "title": "又得十分",
+      "answer": "对",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "左右"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "又",
+            "from": "又",
+            "op": "full"
+          },
+          {
+            "part": "寸",
+            "from": "分",
+            "op": "free"
+          }
+        ],
+        "result": "对"
+      },
+      "path": "riddles/增损/又得十分.md"
+    },
+    {
+      "id": "youli-jixi",
+      "title": "又离鸡西",
+      "answer": "鸟",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "鸟",
+            "from": "鸡",
+            "op": "minus"
+          }
+        ],
+        "result": "鸟"
+      },
+      "path": "riddles/增损/又离鸡西.md"
+    },
+    {
+      "id": "youxin-ru-men-nan-touqi",
+      "title": "有心入门难透气",
+      "answer": "闷",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "上下",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "上下",
+        "心"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "门",
+            "from": "门",
+            "op": "full"
+          },
+          {
+            "part": "心",
+            "from": "心",
+            "op": "full"
+          }
+        ],
+        "result": "闷"
+      },
+      "path": "riddles/增损/有心入门难透气.md"
+    },
+    {
+      "id": "zhi-cha-bazi-weixie",
+      "title": "只差八字未写",
+      "answer": "嗟",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "左右"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "差",
+            "from": "差",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "八",
+            "op": "free"
+          }
+        ],
+        "result": "嗟"
+      },
+      "path": "riddles/增损/只差八字未写.md"
+    },
+    {
+      "id": "banbu-chunqiu",
+      "title": "半部春秋",
+      "answer": "香",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "各半",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "各半",
+        "合成"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "禾",
+            "from": "秋",
+            "op": "half"
+          },
+          {
+            "part": "日",
+            "from": "春",
+            "op": "part"
+          }
+        ],
+        "result": "香"
+      },
+      "path": "riddles/增损/半部春秋.md"
+    },
+    {
+      "id": "chengchi-ban-canpo",
+      "title": "城池半残破",
+      "answer": "地",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "土",
+            "from": "城",
+            "op": "half"
+          },
+          {
+            "part": "也",
+            "from": "池",
+            "op": "half_r"
+          }
+        ],
+        "result": "地"
+      },
+      "path": "riddles/增损/城池半残破.md"
+    },
+    {
+      "id": "dayu-luo-zai-hengshang",
+      "title": "大雨落在横山上",
+      "answer": "雪",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "上下",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "上下"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "雨",
+            "from": "雨",
+            "op": "full"
+          },
+          {
+            "part": "彐",
+            "from": "山",
+            "op": "free"
+          }
+        ],
+        "result": "雪"
+      },
+      "path": "riddles/增损/大雨落在横山上.md"
+    },
+    {
+      "id": "ershiriyi-you-jinqian",
+      "title": "二十一日有金钱",
+      "answer": "错",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "左右"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "钅",
+            "from": "钱",
+            "op": "free"
+          },
+          {
+            "part": "昔",
+            "from": "昔",
+            "op": "free"
+          }
+        ],
+        "result": "错"
+      },
+      "path": "riddles/增损/二十一日有金钱.md"
+    },
+    {
+      "id": "guizhou-jin-tengfei",
+      "title": "贵州今腾飞",
+      "answer": "黑",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "黑",
+            "from": "黔",
+            "op": "minus"
+          }
+        ],
+        "result": "黑"
+      },
+      "path": "riddles/增损/贵州今腾飞.md"
+    },
+    {
+      "id": "lingzhan-xinzi-lie-qianmao",
+      "title": "另展新姿列前茅",
+      "answer": "茄",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "上下",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "上下",
+        "植物"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "艹",
+            "from": "新",
+            "op": "free"
+          },
+          {
+            "part": "甲",
+            "from": "茅",
+            "op": "free"
+          }
+        ],
+        "result": "茄"
+      },
+      "path": "riddles/增损/另展新姿列前茅.md"
+    },
+    {
+      "id": "luori-zai-liangou",
+      "title": "落日在帘钩",
+      "answer": "电",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "左右"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "日",
+            "from": "日",
+            "op": "full"
+          },
+          {
+            "part": "乚",
+            "from": "钩",
+            "op": "free"
+          }
+        ],
+        "result": "电"
+      },
+      "path": "riddles/增损/落日在帘钩.md"
+    },
+    {
+      "id": "shuidiao-getou",
+      "title": "水调歌头",
+      "answer": "河",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "左右",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "左右"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "氵",
+            "from": "水",
+            "op": "free"
+          },
+          {
+            "part": "哥",
+            "from": "歌",
+            "op": "part"
+          }
+        ],
+        "result": "河"
+      },
+      "path": "riddles/增损/水调歌头.md"
+    },
+    {
+      "id": "zuigai-zhanshou",
+      "title": "罪该斩首",
+      "answer": "非",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "非",
+            "from": "罪",
+            "op": "minus"
+          }
+        ],
+        "result": "非"
+      },
+      "path": "riddles/增损/罪该斩首.md"
+    },
+    {
+      "id": "chunyumianmian-qidu-su",
+      "title": "春雨绵绵妻独宿",
+      "answer": "一",
+      "answer_len": 1,
+      "type": "增损",
+      "subtype": "减损",
+      "difficulty": 4,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "增损",
+        "减损"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "一",
+            "from": "春",
+            "op": "minus"
+          }
+        ],
+        "result": "一"
+      },
+      "path": "riddles/增损/春雨绵绵妻独宿.md"
+    },
+    {
+      "id": "renyan-chengxin",
+      "title": "人言诚信为本",
+      "answer": "信",
+      "answer_len": 1,
+      "type": "当代",
+      "subtype": "拼合",
+      "difficulty": 1,
+      "author": "丢词大作战",
+      "era": "当代",
+      "source": "S4",
+      "license": "cc-by-4.0",
+      "copyright": {
+        "text": "cc-by-4.0",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "当代",
+        "拼合",
+        "品德"
+      ],
+      "structure": null,
+      "path": "riddles/当代/人言诚信为本.md"
+    },
+    {
+      "id": "rifu-yiri",
+      "title": "日复一日",
+      "answer": "昌",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "上下",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "时间"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "日",
+            "from": "日",
+            "op": "full"
+          },
+          {
+            "part": "日",
+            "from": "日",
+            "op": "full"
+          }
+        ],
+        "result": "昌"
+      },
+      "path": "riddles/拆字/日复一日.md"
+    },
+    {
+      "id": "shangshan-haishui",
+      "title": "山上还有水",
+      "answer": "汕",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "左右",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "自然"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "山",
+            "from": "山",
+            "op": "full"
+          },
+          {
+            "part": "水",
+            "from": "水",
+            "op": "full"
+          }
+        ],
+        "result": "汕"
+      },
+      "path": "riddles/拆字/山上还有水.md"
+    },
+    {
+      "id": "shikou-zhangkou",
+      "title": "十张口",
+      "answer": "田",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "拼合",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "拼合"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          }
+        ],
+        "result": "田"
+      },
+      "path": "riddles/拆字/十张口.md"
+    },
+    {
+      "id": "yibian-yu-yibian-yang",
+      "title": "一边是鱼，一边是羊，两边不一样",
+      "answer": "鲜",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "左右",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "动物"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "鱼",
+            "from": "鱼",
+            "op": "full"
+          },
+          {
+            "part": "羊",
+            "from": "羊",
+            "op": "full"
+          }
+        ],
+        "result": "鲜"
+      },
+      "path": "riddles/拆字/一边鱼一边羊.md"
+    },
+    {
+      "id": "ren-zai-cao-mu-zhong",
+      "title": "人在草木中",
+      "answer": "茶",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "拼合",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "拼合"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "艹",
+            "from": "草",
+            "op": "part"
+          },
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "木",
+            "from": "木",
+            "op": "full"
+          }
+        ],
+        "result": "茶"
+      },
+      "path": "riddles/拆字/人在草木中.md"
+    },
+    {
+      "id": "shikou-xinsi",
+      "title": "十口心思",
+      "answer": "思",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "拼合",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "拼合"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "十",
+            "from": "十",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          },
+          {
+            "part": "心",
+            "from": "心",
+            "op": "full"
+          }
+        ],
+        "result": "思"
+      },
+      "path": "riddles/拆字/十口心思.md"
+    },
+    {
+      "id": "yibian-lv-yibian-hong",
+      "title": "一边绿，一边红，一边吃水，一边生火",
+      "answer": "秋",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "左右",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "颜色",
+        "自然"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "禾",
+            "from": "绿",
+            "op": "free"
+          },
+          {
+            "part": "火",
+            "from": "红",
+            "op": "free"
+          }
+        ],
+        "result": "秋"
+      },
+      "path": "riddles/拆字/一边绿一边红.md"
+    },
+    {
+      "id": "yiren-yizhang-kou",
+      "title": "一人一张口，口下长只手",
+      "answer": "拿",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "上下",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "人体"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "人",
+            "from": "人",
+            "op": "full"
+          },
+          {
+            "part": "一",
+            "from": "一",
+            "op": "full"
+          },
+          {
+            "part": "口",
+            "from": "口",
+            "op": "full"
+          },
+          {
+            "part": "手",
+            "from": "手",
+            "op": "free"
+          }
+        ],
+        "result": "拿"
+      },
+      "path": "riddles/拆字/一人一张口.md"
+    },
+    {
+      "id": "banged-bandu",
+      "title": "半耕半读",
+      "answer": "讲",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "各半",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "各半"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "讠",
+            "from": "读",
+            "op": "half"
+          },
+          {
+            "part": "井",
+            "from": "耕",
+            "op": "half_r"
+          }
+        ],
+        "result": "讲"
+      },
+      "path": "riddles/拆字/半耕半读.md"
+    },
+    {
+      "id": "banqing-banzi",
+      "title": "半青半紫",
+      "answer": "素",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "各半",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "各半"
+      ],
+      "structure": null,
+      "path": "riddles/拆字/半青半紫.md"
+    },
+    {
+      "id": "chunxiang-lianye-tinqinsheng",
+      "title": "春香连夜听琴声",
+      "answer": "秦",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "上下",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "上下"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "三",
+            "from": "春",
+            "op": "part"
+          },
+          {
+            "part": "人",
+            "from": "春",
+            "op": "part"
+          },
+          {
+            "part": "禾",
+            "from": "香",
+            "op": "part"
+          }
+        ],
+        "result": "秦"
+      },
+      "path": "riddles/拆字/春香连夜听琴声.md"
+    },
+    {
+      "id": "qianli-xiangfeng",
+      "title": "千里相逢",
+      "answer": "重",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "拼合",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "拼合"
+      ],
+      "structure": {
+        "ops": [
+          {
+            "part": "千",
+            "from": "千",
+            "op": "full"
+          },
+          {
+            "part": "里",
+            "from": "里",
+            "op": "full"
+          }
+        ],
+        "result": "重"
+      },
+      "path": "riddles/拆字/千里相逢.md"
+    },
+    {
+      "id": "yikou-yao-niuban",
+      "title": "一口咬掉牛半截",
+      "answer": "告",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "咬损",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "咬损"
+      ],
+      "structure": null,
+      "path": "riddles/拆字/一口咬掉牛半截.md"
+    },
+    {
+      "id": "yiren-zainei",
+      "title": "一人在内",
+      "answer": "肉",
+      "answer_len": 1,
+      "type": "拆字",
+      "subtype": "嵌人",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "拆字",
+        "嵌人"
+      ],
+      "structure": null,
+      "path": "riddles/拆字/一人在内.md"
+    },
+    {
+      "id": "bashiba",
+      "title": "八十八",
+      "answer": "米",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "数字",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "数字",
+        "食物"
+      ],
+      "structure": null,
+      "path": "riddles/数字/八十八.md"
+    },
+    {
+      "id": "sansan-ri",
+      "title": "三个三日",
+      "answer": "晶",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "叠字",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "数字",
+        "叠字",
+        "自然"
+      ],
+      "structure": null,
+      "path": "riddles/数字/三个三日.md"
+    },
+    {
+      "id": "shi'er-ge-yue",
+      "title": "十二个月",
+      "answer": "年",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "纪年",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "数字",
+        "时间"
+      ],
+      "structure": null,
+      "path": "riddles/数字/十二个月.md"
+    },
+    {
+      "id": "jiushijiu",
+      "title": "九十九",
+      "answer": "百",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "差一",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "数字",
+        "差一"
+      ],
+      "structure": null,
+      "path": "riddles/数字/九十九.md"
+    },
+    {
+      "id": "qishier-xiaoshi",
+      "title": "七十二小时",
+      "answer": "晶",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "三日",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "数字",
+        "三日"
+      ],
+      "structure": null,
+      "path": "riddles/数字/七十二小时.md"
+    },
+    {
+      "id": "yibian-yiban",
+      "title": "一边一半",
+      "answer": "秋",
+      "answer_len": 1,
+      "type": "数字",
+      "subtype": "左右",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "数字",
+        "自然"
+      ],
+      "structure": null,
+      "path": "riddles/数字/一边一半.md"
+    },
+    {
+      "id": "shangxia-xianglian",
+      "title": "上下相连",
+      "answer": "卡",
+      "answer_len": 1,
+      "type": "方位",
+      "subtype": "叠字",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "方位",
+        "叠字"
+      ],
+      "structure": null,
+      "path": "riddles/方位/上下相连.md"
+    },
+    {
+      "id": "bantui-banjiu",
+      "title": "半推半就",
+      "answer": "掠",
+      "answer_len": 1,
+      "type": "离合",
+      "subtype": "各半",
+      "difficulty": 3,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "离合",
+        "各半"
+      ],
+      "structure": null,
+      "path": "riddles/离合/半推半就.md"
+    },
+    {
+      "id": "dajiao-chuan-xiaoxie",
+      "title": "大脚穿小鞋",
+      "answer": "难",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S2",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "谐音",
+        "歇后",
+        "物品"
+      ],
+      "structure": null,
+      "path": "riddles/谐音/大脚穿小鞋.md"
+    },
+    {
+      "id": "daguniang-zuo-huajiao",
+      "title": "大姑娘坐花轿",
+      "answer": "迎",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S2",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "谐音",
+        "歇后",
+        "人体"
+      ],
+      "structure": null,
+      "path": "riddles/谐音/大姑娘坐花轿.md"
+    },
+    {
+      "id": "erliang-mianhua",
+      "title": "二两棉花",
+      "answer": "谈",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S2",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "谐音",
+        "歇后",
+        "物品"
+      ],
+      "structure": null,
+      "path": "riddles/谐音/二两棉花.md"
+    },
+    {
+      "id": "kongfuzi-banjia",
+      "title": "孔夫子搬家",
+      "answer": "书",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S2",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "谐音",
+        "歇后",
+        "典故"
+      ],
+      "structure": null,
+      "path": "riddles/谐音/孔夫子搬家.md"
+    },
+    {
+      "id": "shiwu-ge-tong",
+      "title": "十五个桶",
+      "answer": "忍",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S2",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "谐音",
+        "歇后",
+        "数字"
+      ],
+      "structure": null,
+      "path": "riddles/谐音/十五个桶.md"
+    },
+    {
+      "id": "waisheng-da-denglong",
+      "title": "外甥打灯笼",
+      "answer": "照",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S2",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "谐音",
+        "歇后",
+        "人体"
+      ],
+      "structure": null,
+      "path": "riddles/谐音/外甥打灯笼.md"
+    },
+    {
+      "id": "xiaotongban-doufu",
+      "title": "小葱拌豆腐",
+      "answer": "清",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S2",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "谐音",
+        "歇后",
+        "食物"
+      ],
+      "structure": null,
+      "path": "riddles/谐音/小葱拌豆腐.md"
+    },
+    {
+      "id": "zhulan-dashui",
+      "title": "竹篮打水",
+      "answer": "场",
+      "answer_len": 1,
+      "type": "谐音",
+      "subtype": "歇后",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S2",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "谐音",
+        "歇后",
+        "物品"
+      ],
+      "structure": null,
+      "path": "riddles/谐音/竹篮打水.md"
+    },
+    {
+      "id": "riyue-hebi",
+      "title": "日月合璧",
+      "answer": "明",
+      "answer_len": 1,
+      "type": "象形",
+      "subtype": "左右",
+      "difficulty": 1,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "象形",
+        "自然"
+      ],
+      "structure": null,
+      "path": "riddles/象形/日月合璧.md"
+    },
+    {
+      "id": "taiyang-gua-zai-shushao",
+      "title": "太阳挂在树梢",
+      "answer": "杲",
+      "answer_len": 1,
+      "type": "象形",
+      "subtype": "上下",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "象形",
+        "自然"
+      ],
+      "structure": null,
+      "path": "riddles/象形/太阳挂在树梢.md"
+    },
+    {
+      "id": "taiyang-luo-zai-shushao",
+      "title": "太阳落在树梢",
+      "answer": "杳",
+      "answer_len": 1,
+      "type": "象形",
+      "subtype": "上下",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "象形",
+        "自然"
+      ],
+      "structure": null,
+      "path": "riddles/象形/太阳落在树梢.md"
+    },
+    {
+      "id": "yilun-wanyue",
+      "title": "一轮弯月",
+      "answer": "夕",
+      "answer_len": 1,
+      "type": "象形",
+      "subtype": "形似",
+      "difficulty": 2,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "象形",
+        "形似"
+      ],
+      "structure": null,
+      "path": "riddles/象形/一轮弯月.md"
+    },
+    {
+      "id": "yidian-yiheng-chang",
+      "title": "一点一横长",
+      "answer": "府",
+      "answer_len": 1,
+      "type": "象形",
+      "subtype": "笔画",
+      "difficulty": 4,
+      "author": "佚名",
+      "era": "清",
+      "source": "S1+S3",
+      "license": "public-domain",
+      "copyright": {
+        "text": "public-domain",
+        "annotations": "cc-by-4.0"
+      },
+      "tags": [
+        "象形",
+        "笔画"
+      ],
+      "structure": null,
+      "path": "riddles/象形/一点一横长.md"
+    }
+  ]
+}
