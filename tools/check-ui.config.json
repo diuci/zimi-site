@@ -62,5 +62,34 @@
   ],
   "tabbarFiles": [
     "core/tabbar.json"
-  ]
+  ],
+  "chrome": {
+    "noBlankLinks": [
+      "game/src/components/TopNav.vue",
+      "game/src/components/SiteFooter.vue",
+      "game/src/components/TabBar.vue",
+      "game/src/App.vue"
+    ],
+    "mustContain": [
+      {
+        "file": "game/src/components/TopNav.vue",
+        "needle": ["dc-nav-in", "dc-brand-tx", "dc-brand-s"]
+      },
+      {
+        "file": "game/src/App.vue",
+        "needle": "TabBar"
+      },
+      {
+        "file": "site/.vitepress/theme/custom.css",
+        "needle": ["--vp-nav-height: 67px", "font-size: 14.5px", "width: 40px"]
+      }
+    ],
+    "forbid": [
+      {
+        "file": "game/src/components/TopNav.vue",
+        "needle": "width:30px",
+        "why": "印章尺寸以 core/chrome.css 为准（40px 渐变印）"
+      }
+    ]
+  }
 }

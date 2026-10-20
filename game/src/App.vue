@@ -6,6 +6,7 @@
 import { ref, onMounted } from 'vue'
 import TopNav from './components/TopNav.vue'
 import SiteFooter from './components/SiteFooter.vue'
+import TabBar from './components/TabBar.vue'
 import PlayView from './components/PlayView.vue'
 import ForgeView from './components/ForgeView.vue'
 
@@ -38,10 +39,11 @@ onMounted(() => {
       </template>
     </nav>
 
-    <main>
+    <main class="dc-page-in">
       <PlayView v-if="tab !== 'forge'" :key="tab" :mode="tab" />
       <ForgeView v-else />
     </main>
   </div>
   <SiteFooter />
+  <TabBar />
 </template>

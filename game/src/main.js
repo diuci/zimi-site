@@ -4,5 +4,6 @@ import App from './App.vue'
 // sha256），游戏端不自留第二份，杜绝两处漂移。规范 §1：tokens 逐字节一致。
 import '../../site/.vitepress/theme/tokens.css'
 import './styles/main.css'
+import '../../core/chrome.css'
 
 createApp(App).mount('#app')
