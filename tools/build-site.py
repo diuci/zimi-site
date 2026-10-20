@@ -79,48 +79,8 @@ def build(content_root, site_dir):
     (out_public / 'catalog.json').write_text(
         json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (out_riddles / '索引.md').write_text(render_index(payload.get('riddles', [])), encoding='utf-8')
-
-    # 繁体版：整篇繁体 md 来自内容仓派生产物 data/traditional.json（引擎唯一，站点不自转）。
-    trad_json = content_root / 'data' / 'traditional.json'
-    trad_count = 0
-    if trad_json.exists():
-        trad = json.loads(trad_json.read_text(encoding='utf-8'))
-        out_trad = site_dir / 'trad'
-        if out_trad.exists():
-            shutil.rmtree(out_trad)
-        for row in trad.get('rows', []):
-            rid = row.get('id')
-            if not rid:
-                continue
-            # 找到该 id 的简体相对路径，繁体镜像到 trad/<同路径>
-            rel = None
-            for r in payload.get('riddles', []):
-                if r.get('id') == rid:
-                    rel = r.get('path', '').replace('riddles/', '', 1)
-                    break
-            if not rel:
-                continue
-            dest = out_trad / rel
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            dest.write_text(row.get('body_t', ''), encoding='utf-8')
-            trad_count += 1
-        # 繁体索引
-        if trad_count:
-            ui = trad.get('ui', {})
-            idx_lines = ['# %s' % ui.get('索引', '索引'), '',
-                         '> 由 `tools/build-site.py` 从内容仓 `data/traditional.json` 生成，共 %d 篇。' % trad_count, '']
-            bytype = {}
-            for r in payload.get('riddles', []):
-                bytype.setdefault(str(r.get('type') or '?'), []).append(r)
-            for t in sorted(bytype):
-                items = sorted(bytype[t], key=lambda r: (r.get('difficulty') or 0, str(r.get('id') or '')))
-                idx_lines += ['', '## %s（%d）' % (ui.get(t, t), len(items)), '']
-                for r in items:
-                    idx_lines.append('- [%s](%s) → **%s**（難度 %d）' % (
-                        ui.get(r.get('title'), r.get('title')), r.get('path', '').replace('riddles/', '', 1),
-                        r.get('answer'), r.get('difficulty') or 0))
-            (out_trad / '索引.md').write_text('\n'.join(idx_lines).rstrip() + '\n', encoding='utf-8')
-    return copied, payload.get('count', 0), trad_count
+    # v4 起全站仅简体：/trad/ 镜像页生成已下线（内容仓繁体引擎保留，站点不再消费）。
+    return copied, payload.get('count', 0), 0
 
 
 def selftest():

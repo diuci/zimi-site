@@ -11,16 +11,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&amp;family=ZCOOL+KuaiLe&amp;family=ZCOOL+XiaoWei&amp;display=swap" />
     <!-- 首帧之前定色（规范 §4）：脚本与 _deploy/core/theme.mjs 的 BOOTSTRAP 同源
-         （check-core R4 钉特征）；MutationObserver 让切主题时地址栏色同步。 -->
+         （check-core R4 钉特征）；主题存 cookie 跨站共享，MutationObserver 同步地址栏色。 -->
     <script>
       ;(function () {
         var t = document.documentElement
         var m = document.querySelector('meta[name="theme-color"]')
-        var saved = null
-        try { saved = localStorage.getItem('dc-theme') } catch (e) {}
-        var mode = saved === 'dark' || saved === 'light'
-          ? saved
-          : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        function rc(n) { var h = document.cookie.split(/;\s*/).find(function (c) { return c.indexOf(n + '=') === 0 }); return h ? h.slice(n.length + 1) : null }
+        function wc(v) { document.cookie = 'dc-theme=' + v + ';domain=.diuci.com;path=/;max-age=31536000;SameSite=Lax' }
+        var mode = rc('dc-theme')
+        if (mode !== 'dark' && mode !== 'light') {
+          try { mode = localStorage.getItem('dc-theme') } catch (e) {}
+          if (mode === 'dark' || mode === 'light') { try { wc(mode) } catch (e) {} }
+          else mode = null
+        }
+        if (mode !== 'dark' && mode !== 'light')
+          mode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
         t.setAttribute('data-theme', mode)
         t.classList.toggle('dark', mode === 'dark')
         t.classList.toggle('light', mode === 'light')
