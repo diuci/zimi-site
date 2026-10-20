@@ -703,6 +703,18 @@ body::after {
   display: none;
 }
 @media (max-width: 768px) {
+  /* 页脚移动端紧凑化：与 core/chrome.css 的 @media 768 页脚规则同值镜像
+     （上下居中、收紧内边距与字号——chrome 契约 v4；k12 同款互指） */
+  .VPFooter .container {
+    padding: 14px 16px;
+  }
+  .VPFooter .message,
+  .VPFooter .copyright {
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
   .dc-tabbar {
     display: flex;
     position: fixed;
