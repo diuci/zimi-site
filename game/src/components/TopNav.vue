@@ -4,9 +4,10 @@
 // 本页不摆繁简钮：游戏界面暂无繁体两套文案，按规范 §3「不许静默择一」，
 // 摆了就是点了没反应。与 VitePress 侧的逐页豁免（ScriptToggle 只在有繁体对应的页渲染）同理。
 import { ref, onMounted } from 'vue'
+import { toggleTheme as coreToggle } from '../../../core/theme.mjs'
+import parksData from '../../../core/parks.json'
 
 const dark = ref(false)
-const DARK_KEY = 'dc-theme'
 
 function apply(v) {
   const el = document.documentElement
@@ -16,29 +17,23 @@ function apply(v) {
   if (meta) meta.setAttribute('content', v ? '#17140f' : '#f4ede0')
 }
 
+// 切换走统一核心 core/theme（PLAN-全站统一-v2 追加）：本组件只留按钮态
 function toggleTheme() {
-  dark.value = !dark.value
-  try { localStorage.setItem(DARK_KEY, dark.value ? 'dark' : 'light') } catch {}
-  apply(dark.value)
+  dark.value = coreToggle() === 'dark'
 }
 
 onMounted(() => {
   let v = false
-  try { v = localStorage.getItem(DARK_KEY) === 'dark' } catch {}
+  try { v = localStorage.getItem('dc-theme') === 'dark' } catch {}
   dark.value = v
   apply(v)
 })
 
-const PARKS = [
-  { href: 'https://diuci.com/', label: '首页' },
-  { href: 'https://k12.diuci.com/', label: '学古诗' },
-  { href: 'https://jiagu.diuci.com/', label: '画甲骨' },
-  { href: 'https://lian.diuci.com/', label: '连词' },
-  { href: '/', label: '猜谜', on: true },
-  { href: 'https://handle.diuci.com/', label: '汉兜' },
-  { href: 'https://moon.diuci.com/', label: '月冕' },
-  { href: 'https://ink.diuci.com/', label: '大作战' },
-]
+// 顶栏乐园数据单源 core/parks.json（当前项按 hostname 判定）
+const PARKS = parksData.parks.map((p) => ({
+  ...p,
+  on: typeof location !== 'undefined' && p.href.includes(location.hostname),
+}))
 </script>
 
 <template>
